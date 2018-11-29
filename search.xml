@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[新文章]]></title>
-    <url>%2F2018%2F11%2F27%2Fgsl%2F</url>
-    <content type="text"><![CDATA[Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[OC文]]></title>
+    <url>%2F2018%2F11%2F29%2Fwenzhnagh%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>OC</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>

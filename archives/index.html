@@ -39,7 +39,24 @@
 
     <link rel="canonical" href="http://yoursite.com"/>
 
-                 
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
 </head>
 
 <body class="home-template no-js">
@@ -69,7 +86,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">代码库</a></li>
             
               <li class="navigation__item"><a href="/favourite">黄金屋</a></li>
             
@@ -92,7 +109,7 @@
   <!-- Github -->
   
   <li class="navigation__item">
-    <a href="https://github.com/monniya" title="GitHub" target="_blank">
+    <a href="https://github.com/monniya" title="查看我的GitHub主页" target="_blank">
       <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
@@ -111,7 +128,7 @@
 <!-- Twitter -->
 
   <li class="navigation__item">
-    <a href="https://twitter.com/onlymonniya" title="Twitter" target="_blank">
+    <a href="https://twitter.com/onlymonniya" title="上Twitter找我" target="_blank">
       <i class="social fa fa-twitter"></i>
       <span class="label">Twitter</span>
     </a>
@@ -150,19 +167,15 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/11/27/gsl/" title="link to post.title">新文章</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/11/29/wenzhnagh/" title="link to post.title">OC文</a></h2>
       <p class="excerpt">
     
-      Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-More info: Deployment
-
+      
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-11-27T10:32:50.858Z" class="post-list__meta--date date">2018-11-27</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/11/27/gsl/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-11-29T10:08:15.000Z" class="post-list__meta--date date">2018-11-29</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/OC/">OC</a>
+</span><a class="btn-border-small" href="/2018/11/29/wenzhnagh/">继续阅读</a></div>
       <hr class="post-list__divider">
     </li>
   
@@ -221,9 +234,28 @@ Quick
 <span id="busuanzi_container_site_uv">
  	总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
 </footer>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/01/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
 
 
         </div>
@@ -254,7 +286,6 @@ Quick
 
 
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
     
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
