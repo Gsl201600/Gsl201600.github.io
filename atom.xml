@@ -5,9 +5,9 @@
   <subtitle>ones</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://gsl201600.github.io/"/>
   <updated>2018-11-29T10:09:12.263Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://gsl201600.github.io/</id>
   
   <author>
     <name>Gsl</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>OC文</title>
-    <link href="http://yoursite.com/2018/11/29/wenzhnagh/"/>
-    <id>http://yoursite.com/2018/11/29/wenzhnagh/</id>
+    <link href="https://gsl201600.github.io/2018/11/29/wenzhnagh/"/>
+    <id>https://gsl201600.github.io/2018/11/29/wenzhnagh/</id>
     <published>2018-11-29T10:08:15.000Z</published>
     <updated>2018-11-29T10:09:12.263Z</updated>
     
@@ -28,14 +28,14 @@
     </summary>
     
     
-      <category term="OC" scheme="http://yoursite.com/tags/OC/"/>
+      <category term="OC" scheme="https://gsl201600.github.io/tags/OC/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/11/27/hello-world/"/>
-    <id>http://yoursite.com/2018/11/27/hello-world/</id>
+    <link href="https://gsl201600.github.io/2018/11/27/hello-world/"/>
+    <id>https://gsl201600.github.io/2018/11/27/hello-world/</id>
     <published>2018-11-27T06:57:21.821Z</published>
     <updated>2018-11-29T10:07:56.990Z</updated>
     
