@@ -190,38 +190,17 @@
 </ul>
 <p><strong>4. 解决办法</strong> </p>
 <ul>
-<li><figure class="highlight plain"><figcaption><span>invalidate</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这种方式是可以释放掉的，但如果我只是想在离开此页时要释放，进入下一页时不要释放，场景就不适用了</span><br></pre></td></tr></table></figure>
+<li><p><code>viewWillDisappear</code>或 <code>viewDidDisappear</code>中 invalidate<br>这种方式是可以释放掉的，但如果我只是想在离开此页时要释放，进入下一页时不要释放，场景就不适用了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillDisappear:(BOOL)animated</span><br><span class="line">- (void)viewDidDisappear:(BOOL)animated</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加一个NSTimer类的扩展，把target指给[NSTimer class]，事件由加方法接收，然后把事件通过block传递出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@interface NSTimer (Block)</span><br><span class="line"></span><br><span class="line">+ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer *timer))block;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation NSTimer (Block)</span><br><span class="line"></span><br><span class="line">+ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer *timer))block&#123;</span><br><span class="line">NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(trigger:) userInfo:[block copy] repeats:repeats];</span><br><span class="line">return timer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)trigger:(NSTimer *)timer&#123;</span><br><span class="line">void(^block)(NSTimer *timer) = [timer userInfo];</span><br><span class="line">if (block) &#123;</span><br><span class="line">block(timer);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@interface SecondViewController ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic, strong) NSTimer *timer;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation SecondViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">[super viewDidLoad];</span><br><span class="line">__weak typeof(self) weakSelf = self;</span><br><span class="line">self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer * _Nonnull timer) &#123;</span><br><span class="line">[weakSelf doSomeThing];</span><br><span class="line">&#125;];</span><br><span class="line">[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)dealloc &#123;</span><br><span class="line">[self.timer invalidate];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ul>
-<li>(void)viewWillDisappear:(BOOL)animated</li>
-<li>(void)viewDidDisappear:(BOOL)animated<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 添加一个NSTimer类的扩展，把target指给[NSTimer class]，事件由加方法接收，然后把事件通过block传递出来</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>@interface NSTimer (Block)</p>
-<ul>
-<li>(instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer *timer))block;</li>
-</ul>
-<p>@end</p>
-<p>@implementation NSTimer (Block)</p>
-<ul>
-<li><p>(instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer <em>timer))block{<br>NSTimer </em>timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(trigger:) userInfo:[block copy] repeats:repeats];<br>return timer;<br>}</p>
-</li>
-<li><p>(void)trigger:(NSTimer <em>)timer{<br>void(^block)(NSTimer </em>timer) = [timer userInfo];<br>if (block) {<br>block(timer);<br>}<br>}</p>
-</li>
-</ul>
-<p>@end<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 使用示例</span><br></pre></td></tr></table></figure></p>
-<p>@interface SecondViewController ()</p>
-<p>@property (nonatomic, strong) NSTimer *timer;</p>
-<p>@end</p>
-<p>@implementation SecondViewController</p>
-<ul>
-<li><p>(void)viewDidLoad {<br>[super viewDidLoad];<br>__weak typeof(self) weakSelf = self;<br>self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer * _Nonnull timer) {<br>[weakSelf doSomeThing];<br>}];<br>[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];<br>}</p>
-</li>
-<li><p>(void)dealloc {<br>[self.timer invalidate];<br>}</p>
-</li>
-</ul>
-<p>@end<br><code>`</code><br><strong>5. invalidate方法注意事项</strong></p>
+<p><strong>5. invalidate方法注意事项</strong></p>
 <blockquote>
 <p>invalidate方法的介绍：<br>（1）This method is the only way to remove a timer from an NSRunLoop object. The NSRunLoop object removes its strong reference to the timer, either just before the invalidate method returns or at some later point.<br>（2）You must send this message from the thread on which the timer was installed. If you send this message from another thread, the input source associated with the timer may not be removed from its run loop, which could prevent the thread from exiting properly.<br>两点：<br>（1）invalidate方法是唯一能从runloop中移除timer的方式，调用invalidate方法后，runloop会移除对timer的强引用<br>（2）timer的添加和timer的移除（invalidate）需要在同一个线程中，否则timer可能不能正确的移除，线程不能正确退出</p>
 </blockquote>
@@ -366,5 +345,5 @@
 
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":140,"height":280},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
 </html>
