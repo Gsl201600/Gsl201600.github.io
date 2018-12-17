@@ -1,0 +1,91 @@
+---
+title: iOS timer定时器正确使用方式
+date: 2018-11-30 14:44:28
+tags: 代码库
+---
+**1. 初始化，添加定时器前先移除**
+```
+[self.timer invalidate];
+self.timer = nil;
+self.timer = [NSTimer scheduledTimerWithTimeInterval:2.f target:self selector:@selector(lookforCard:) userInfo:nil repeats:YES];
+[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+```
+
+**2. 释放timer**
+```
+[self.timer invalidate];
+self.timer = nil;
+```
+
+**3. NSTimer不释放原因**
+* 原因是 Timer 添加到 Runloop 的时候，会被 Runloop 强引用；然后 Timer 又会有一个对 Target 的强引用（也就是 self ）
+> 注意target参数的描述：
+The object to which to send the message specified by aSelector when the timer fires. The timer maintains a strong reference to target until it (the timer) is invalidated.
+注意：文档中写的很清楚，timer对target会有一个强引用，直到timer is invalidated。也就是说，在timer调用 invalidate方法之前，timer对target一直都有一个强引用。这也是为什么控制器的dealloc 方法不会被调用的原因。
+方法的文档介绍：
+The receiver retains aTimer. To remove a timer from all run loop modes on which it is installed, send an invalidate message to the timer.
+也就是说，runLoop会对timer有强引用，因此，timer修饰符是weak，timer还是不能释放，timer的target也就不能释放。
+
+**4. 解决办法** 
+*  `viewWillDisappear`或 `viewDidDisappear`中 invalidate
+这种方式是可以释放掉的，但如果我只是想在离开此页时要释放，进入下一页时不要释放，场景就不适用了
+```
+- (void)viewWillDisappear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
+```
+* 添加一个NSTimer类的扩展，把target指给[NSTimer class]，事件由加方法接收，然后把事件通过block传递出来
+```
+@interface NSTimer (Block)
+
++ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer *timer))block;
+
+@end
+
+@implementation NSTimer (Block)
+
++ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)(NSTimer *timer))block{
+NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(trigger:) userInfo:[block copy] repeats:repeats];
+return timer;
+}
+
++ (void)trigger:(NSTimer *)timer{
+void(^block)(NSTimer *timer) = [timer userInfo];
+if (block) {
+block(timer);
+}
+}
+
+@end
+```
+* 使用示例
+```
+@interface SecondViewController ()
+
+@property (nonatomic, strong) NSTimer *timer;
+
+@end
+
+@implementation SecondViewController
+
+- (void)viewDidLoad {
+[super viewDidLoad];
+__weak typeof(self) weakSelf = self;
+self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+[weakSelf doSomeThing];
+}];
+[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)dealloc {
+[self.timer invalidate];
+}
+
+@end
+```
+**5. invalidate方法注意事项**
+> invalidate方法的介绍：
+（1）This method is the only way to remove a timer from an NSRunLoop object. The NSRunLoop object removes its strong reference to the timer, either just before the invalidate method returns or at some later point.
+（2）You must send this message from the thread on which the timer was installed. If you send this message from another thread, the input source associated with the timer may not be removed from its run loop, which could prevent the thread from exiting properly.
+两点：
+（1）invalidate方法是唯一能从runloop中移除timer的方式，调用invalidate方法后，runloop会移除对timer的强引用
+（2）timer的添加和timer的移除（invalidate）需要在同一个线程中，否则timer可能不能正确的移除，线程不能正确退出
