@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html <% if (config.language) { %>lang="<%= config.language[0] %>"<% } %>>
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <%
+    var title = page.title;
+    title = title ? (title + ' | ' + config.title) : (config.subtitle ? config.title + " | " + config.subtitle : config.title);
+    var description = "";
+    if (page.description || theme.description || config.description) {
+        description = page.description || theme.description || config.description;
+    }
+    if (!description) {
+        if (page.excerpt) {
+            description = strip_html(page.excerpt);
+        } else if (page.content) {
+            description = strip_html(page.content);
+        }
+    }
+    description = description.substring(0, 200).replace(/^\s+|\s+$/g, '');
+    %>
+    <title><%= title %></title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="<%= description %>">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="<%= description %>">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= description %>">
+
+    <% if (config.author){ %>
+    <meta name="author" content="<%= config.author %>">
+    <% } %>
+    <%- css('css/vno') %>
+    <%- css('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css') %>
+
+    <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+    <% } %>
+
+    <meta name="generator" content="hexo"/>
+    <% if (theme.rss) { %>
+    <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= theme.rss %>">
+    <% } %>
+
+    <link rel="canonical" href="<%= page.permalink || config.url %>"/>
+
+    <% if (theme.social["google_plus"]) { %>
+    <link rel="author" href="<%= theme.social['google_plus'] %>"/>
+    <% } %>
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
