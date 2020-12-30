@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS TouchID and FaceID | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS TouchID and FaceID | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS TouchID and FaceID | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/02/20/iOSTouchID/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-02-20T09:31:00.000Z" class="post-list__meta--date date">2019-02-20</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS TouchID and FaceID</h1>
+  </header>
+
+  <section class="post">
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*  .h 继承自 LAContext</span><br><span class="line">*  TouchID&#x2F;FaceID 状态</span><br><span class="line">*&#x2F;</span><br><span class="line">typedef NS_ENUM(NSUInteger, XyAuthIDState)&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  当前设备不支持TouchID&#x2F;FaceID</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateNotSupport &#x3D; 0,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 验证成功</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateSuccess &#x3D; 1,</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 验证失败</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateFail &#x3D; 2,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 被用户手动取消</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateUserCancel &#x3D; 3,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  用户不使用TouchID&#x2F;FaceID,选择手动输入密码</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateInputPassword &#x3D; 4,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 被系统取消 (如遇到来电,锁屏,按了Home键等)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateSystemCancel &#x3D; 5,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 无法启动,因为用户没有设置密码</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStatePasswordNotSet &#x3D; 6,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 无法启动,因为用户没有设置TouchID&#x2F;FaceID</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateTouchIDNotSet &#x3D; 7,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 无效</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateTouchIDNotAvailable &#x3D; 8,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  TouchID&#x2F;FaceID 被锁定(连续多次验证TouchID&#x2F;FaceID失败,系统需要用户手动输入密码)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateTouchIDLockout &#x3D; 9,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  当前软件被挂起并取消了授权 (如App进入了后台等)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateAppCancel &#x3D; 10,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  当前软件被挂起并取消了授权 (LAContext对象无效)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateInvalidContext &#x3D; 11,</span><br><span class="line">    &#x2F;**</span><br><span class="line">    *  系统版本不支持TouchID&#x2F;FaceID (必须高于iOS 8.0才能使用)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    XyAuthIDStateVersionNotSupport &#x3D; 12</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">@interface XyAuthID : LAContext</span><br><span class="line"></span><br><span class="line">typedef void (^XyAuthIDStateBlock)(XyAuthIDState state, NSError *error);</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line">* 启动TouchID&#x2F;FaceID进行验证</span><br><span class="line">* @param describe TouchID&#x2F;FaceID显示的描述</span><br><span class="line">* @param block 回调状态的block</span><br><span class="line">*&#x2F;</span><br><span class="line">- (void)xy_showAuthIDWithDescribe:(NSString *)describe block:(XyAuthIDStateBlock)block;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">#define iPhoneX (UIScreen.mainScreen.bounds.size.width &#x3D;&#x3D; 375.f &amp;&amp; UIScreen.mainScreen.bounds.size.height &#x3D;&#x3D; 812.f)</span><br><span class="line"></span><br><span class="line">@implementation XyAuthID</span><br><span class="line"></span><br><span class="line">+ (instancetype)sharedInstance &#123;</span><br><span class="line">    static XyAuthID *instance &#x3D; nil;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        instance &#x3D; [[XyAuthID alloc] init];</span><br><span class="line">    &#125;);</span><br><span class="line">    return instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)xy_showAuthIDWithDescribe:(NSString *)describe block:(XyAuthIDStateBlock)block &#123;</span><br><span class="line">    if(!describe) &#123;</span><br><span class="line">        if(iPhoneX)&#123;</span><br><span class="line">            describe &#x3D; @&quot;验证已有面容&quot;;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            describe &#x3D; @&quot;通过Home键验证已有指纹&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (NSFoundationVersionNumber &lt; NSFoundationVersionNumber_iOS_8_0) &#123;</span><br><span class="line"></span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            NSLog(@&quot;系统版本不支持TouchID&#x2F;FaceID (必须高于iOS 8.0才能使用)&quot;);</span><br><span class="line">            block(XyAuthIDStateVersionNotSupport, nil);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    LAContext *context &#x3D; [[LAContext alloc] init];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 认证失败提示信息，为 @&quot;&quot; 则不提示</span><br><span class="line">    context.localizedFallbackTitle &#x3D; @&quot;输入密码&quot;;</span><br><span class="line"></span><br><span class="line">    NSError *error &#x3D; nil;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; LAPolicyDeviceOwnerAuthenticationWithBiometrics: 用TouchID&#x2F;FaceID验证</span><br><span class="line">    &#x2F;&#x2F; LAPolicyDeviceOwnerAuthentication: 用TouchID&#x2F;FaceID或密码验证, 默认是错误两次或锁定后, 弹出输入密码界面（本案例使用）</span><br><span class="line">    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&amp;error]) &#123;</span><br><span class="line">        [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:describe reply:^(BOOL success, NSError * _Nullable error) &#123;</span><br><span class="line"></span><br><span class="line">            if (success) &#123;</span><br><span class="line">                dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                    NSLog(@&quot;TouchID&#x2F;FaceID 验证成功&quot;);</span><br><span class="line">                    block(XyAuthIDStateSuccess, error);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;else if(error)&#123;</span><br><span class="line"></span><br><span class="line">                if (@available(iOS 11.0, *)) &#123;</span><br><span class="line">                    switch (error.code) &#123;</span><br><span class="line">                        case LAErrorAuthenticationFailed:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 验证失败&quot;);</span><br><span class="line">                                block(XyAuthIDStateFail, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorUserCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 被用户手动取消&quot;);</span><br><span class="line">                                block(XyAuthIDStateUserCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorUserFallback:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;用户不使用TouchID&#x2F;FaceID,选择手动输入密码&quot;);</span><br><span class="line">                                block(XyAuthIDStateInputPassword, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorSystemCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 被系统取消 (如遇到来电,锁屏,按了Home键等)&quot;);</span><br><span class="line">                                block(XyAuthIDStateSystemCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorPasscodeNotSet:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 无法启动,因为用户没有设置密码&quot;);</span><br><span class="line">                                block(XyAuthIDStatePasswordNotSet, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        &#x2F;&#x2F;case LAErrorTouchIDNotEnrolled:&#123;</span><br><span class="line">                        case LAErrorBiometryNotEnrolled:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 无法启动,因为用户没有设置TouchID&#x2F;FaceID&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDNotSet, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        &#x2F;&#x2F;case LAErrorTouchIDNotAvailable:&#123;</span><br><span class="line">                        case LAErrorBiometryNotAvailable:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 无效&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDNotAvailable, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        &#x2F;&#x2F;case LAErrorTouchIDLockout:&#123;</span><br><span class="line">                        case LAErrorBiometryLockout:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID&#x2F;FaceID 被锁定(连续多次验证TouchID&#x2F;FaceID失败,系统需要用户手动输入密码)&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDLockout, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorAppCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;当前软件被挂起并取消了授权 (如App进入了后台等)&quot;);</span><br><span class="line">                                block(XyAuthIDStateAppCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorInvalidContext:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;当前软件被挂起并取消了授权 (LAContext对象无效)&quot;);</span><br><span class="line">                                block(XyAuthIDStateInvalidContext, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        default:</span><br><span class="line">                            break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    &#x2F;&#x2F; iOS 11.0以下的版本只有 TouchID 认证</span><br><span class="line">                    switch (error.code) &#123;</span><br><span class="line">                        case LAErrorAuthenticationFailed:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 验证失败&quot;);</span><br><span class="line">                                block(XyAuthIDStateFail, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorUserCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 被用户手动取消&quot;);</span><br><span class="line">                                block(XyAuthIDStateUserCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorUserFallback:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;用户不使用TouchID,选择手动输入密码&quot;);</span><br><span class="line">                                block(XyAuthIDStateInputPassword, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorSystemCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 被系统取消 (如遇到来电,锁屏,按了Home键等)&quot;);</span><br><span class="line">                                block(XyAuthIDStateSystemCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorPasscodeNotSet:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 无法启动,因为用户没有设置密码&quot;);</span><br><span class="line">                                block(XyAuthIDStatePasswordNotSet, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorTouchIDNotEnrolled:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 无法启动,因为用户没有设置TouchID&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDNotSet, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorTouchIDNotAvailable:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 无效&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDNotAvailable, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorTouchIDLockout:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;TouchID 被锁定(连续多次验证TouchID失败,系统需要用户手动输入密码)&quot;);</span><br><span class="line">                                block(XyAuthIDStateTouchIDLockout, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorAppCancel:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;当前软件被挂起并取消了授权 (如App进入了后台等)&quot;);</span><br><span class="line">                                block(XyAuthIDStateAppCancel, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case LAErrorInvalidContext:&#123;</span><br><span class="line">                            dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                                NSLog(@&quot;当前软件被挂起并取消了授权 (LAContext对象无效)&quot;);</span><br><span class="line">                                block(XyAuthIDStateInvalidContext, error);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        default:</span><br><span class="line">                            break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            NSLog(@&quot;当前设备不支持TouchID&#x2F;FaceID&quot;);</span><br><span class="line">            block(XyAuthIDStateNotSupport, error);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/21/iOS证书转换相关命令/" title="iOS 证书转换相关命令">iOS 证书转换相关命令</a></h2>
+                <p class="excerpt">
+                
+                证书有效期：1openssl x509 -in xxx.pem -noout -dates生成pem格式的证书：1openssl pkcs12 -in CertificateName.p12 -out CertificateName.pem -nodes
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-21T07:55:00.000Z" class="post-list__meta--date date">2019-02-21</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/21/iOS证书转换相关命令/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/19/iOS悬浮按钮/" title="iOS 悬浮按钮">iOS 悬浮按钮</a></h2>
+                <p class="excerpt">
+                
+                新建继承于UIWindow的类.h文件如下123456789101112131415typedef void(^ClickBlock)(NSInteger i);@interface GSLFloatingView : UIWindow@property (nonatomic, copy) Clic
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-19T07:23:00.000Z" class="post-list__meta--date date">2019-02-19</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/19/iOS悬浮按钮/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

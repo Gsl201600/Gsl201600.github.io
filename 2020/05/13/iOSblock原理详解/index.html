@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS block原理详解 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS block原理详解 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS block原理详解 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2020/05/13/iOSblock%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2020-05-13T08:18:00.000Z" class="post-list__meta--date date">2020-05-13</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS block原理详解</h1>
+  </header>
+
+  <section class="post">
+    <ol>
+<li>block本质</li>
+</ol>
+<ul>
+<li><code>block</code>底层就是一个<code>struct __main_block_impl_0</code>类型的<code>结构体</code>，这个结构体中包含一个<code>isa</code>指针，本质上是一个<code>OC</code>对象</li>
+<li><code>block</code>是封装了<code>函数调用</code>以及<code>函数调用环境</code>的<code>OC</code>对象</li>
+</ul>
+<ol start="2">
+<li><p>block底层结构<br><code>block</code>底层结构就是<code>__main_block_impl_0</code>结构体，内部包含了<code>impl结构体</code>和<code>Desc结构体</code>以及外部需要访问的<code>变量</code>，<code>block</code>将需要执行的代码放到一个函数里，<code>impl</code>内部的<code>FuncPtr</code>指向这个函数的地址，通过地址调用这个函数，就可以执行<code>block</code>里面的代码了。<code>Desc</code>用来描述<code>block</code>，内部的<code>reserved</code>作保留，<code>Block_size</code>描述<code>block</code>占用内存<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img2020/2020.05.13.01.png" alt=""></p>
+</li>
+<li><p>block的变量捕获<br><code>局部变量block</code>访问方式是<code>值传递</code>，<code>auto自动变量</code>可能会销毁，内存可能会消失，不采用指针访问；<br><code>局部静态变量block</code>访问方式是<code>指针传递</code>，<code>static变量</code>一直保存在内存中，指针访问即可;<br><code>全局变量、静态全局变量block</code>不需要对变量捕获，直接取值<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img2020/2020.05.13.02.png" alt=""></p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; block的变量捕获代码解析如下</span><br><span class="line">auto int age &#x3D; 10;</span><br><span class="line">static int height &#x3D; 10;    </span><br><span class="line">void (^block)(void) &#x3D; ^&#123;</span><br><span class="line">    NSLog(@&quot;age is %d,height is %d&quot;,age,height);</span><br><span class="line">&#125;;        </span><br><span class="line">age &#x3D; 20;</span><br><span class="line">height &#x3D; 20;        </span><br><span class="line">block();</span><br><span class="line">-------------------------------------------------</span><br><span class="line">output: age is 10,height is 20</span><br><span class="line"></span><br><span class="line">struct __main_block_impl_0 &#123;</span><br><span class="line">  struct __block_impl impl;</span><br><span class="line">  struct __main_block_desc_0* Desc;</span><br><span class="line">  int age; &#x2F;&#x2F; 值传递</span><br><span class="line">  int *height; &#x2F;&#x2F; 指针传递</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>block的类型</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>block类型</th>
+<th>环境</th>
+<th>存储域</th>
+<th>copy操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__NSGlobalBlock__</code></td>
+<td>没有访问<code>auto变量</code></td>
+<td>数据区</td>
+<td>什么也不做，类型不改变</td>
+</tr>
+<tr>
+<td><code>__NSStackBlock__</code></td>
+<td>访问了<code>auto变量</code></td>
+<td>栈区</td>
+<td>从栈复制到堆，类型改变为<code>__NSMallocBlock__</code></td>
+</tr>
+<tr>
+<td><code>__NSMallocBlock__</code></td>
+<td><code>__NSStackBlock__</code>调用了<code>copy</code></td>
+<td>堆区</td>
+<td>引用计数<code>+1</code>，类型不改变</td>
+</tr>
+</tbody>
+</table>
+<p>在<code>ARC</code>下<code>Block</code>访问<code>auto变量</code>时系统默认帮我们进行了<code>copy</code>操作，<code>NSGlobalBlock</code>访问了<code>auto变量</code>时会变成<code>NSStackBlock</code>，当<code>NSStackBlock</code>进行<code>copy</code>操作后会变成<code>NSMallocBlock</code></p>
+<ul>
+<li>在<code>ARC</code>环境下，编译器会根据以下几种情况自动将<code>栈上的block</code>复制到<code>堆上</code>:<br>1、<code>block</code>作为函数返回值时，比如使用<code>=</code><br>2、将<code>block</code>赋值给<code>__strong</code>指针时<br>3、<code>block</code>作为<code>Cocoa API</code>中方法名含有<code>usingBlock</code>的方法参数时<br>4、<code>block</code>作为<code>GCD API</code>的方法参数时</li>
+</ul>
+<ol start="5">
+<li>对象类型的auto变量</li>
+</ol>
+<ul>
+<li>当<code>block</code>内部访问了对象类型的<code>auto变量</code>时:<br>如果<code>block在栈空间</code>，不论是<code>ARC还是MRC</code>环境，不管<code>外部变量</code>是<code>强引用还是弱引用</code>，<code>block</code>都会<code>弱引用</code>访问对象<br>如果<code>block在堆空间</code>，如果外部<code>强引用</code>，<code>block</code>内部也是<code>强引用</code>；如果外部<code>弱引用</code>，<code>block</code>内部也是<code>弱引用</code></li>
+<li>栈block：<br>a) 如果<code>block</code>是在<code>栈上</code>，将不会对<code>auto变量</code>产生<code>强引用</code><br>b) <code>栈上的block</code>随时会被销毁，也没必要去强引用其他对象</li>
+<li>堆block：<br><strong>1、如果block被拷贝到堆上</strong><br>a) 会调用<code>block</code>内部的<code>copy</code>函数<br>b) <code>copy</code>函数内部会调用<code>_Block_object_assign</code>函数<br>c) <code>_Block_object_assign</code>函数会根据<code>auto变量</code>的修饰符<code>__strong</code>、<code>__weak</code>、<code>__unsafe_unretained</code>做出相应的操作，形成<code>强引用</code>或者<code>弱引用</code><br><strong>2、如果block从堆上移除</strong><br>a) 会调用<code>block</code>内部的<code>dispose</code>函数<br>b) <code>dispose</code>函数内部会调用<code>_Block_object_dispose</code>函数<br>c) <code>_Block_object_dispose</code>函数会自动释放引用的<code>auto变量</code>(<code>release</code>，引用计数<code>-1</code>，若为<code>0</code>，则销毁)</li>
+</ul>
+<ol start="6">
+<li>__block</li>
+</ol>
+<ul>
+<li><code>__block</code>修饰符作用：<br><code>__block</code>可以用于解决<code>block</code>内部无法修改<code>auto变量值</code>的问题<br><code>__block</code>不能修饰全局变量、静态变量<code>static</code></li>
+<li><code>__block</code>修饰符原理：<br>编译器会将<code>__block</code>变量包装成一个结构体<code>__Block_byref_age_0</code>，结构体内部<code>*__forwarding</code>是指向自身的指针，内部还存储着外部<code>auto变量</code>的值<br><code>__block</code>的<code>forwarding</code>指针如下图：<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img2020/2020.05.13.03.png" alt=""></li>
+</ul>
+<p><code>栈上</code>，<code>__block</code>结构体中的<code>__forwarding</code>指针<code>指向自己</code>，一旦复制到<code>堆上</code>，<code>栈上的__block</code>结构体中的<code>__forwarding</code>指针会指向<code>堆上的__block</code>结构体，<code>堆上__block</code>结构体中的<code>__forwarding</code>还是<code>指向自己</code>。假设<code>age</code>是<code>栈上</code>的变量，<code>age-&gt;__forwarding</code>会拿到<code>堆上的__block</code>结构体，<code>age-&gt;__forwarding-&gt;age</code>会把<code>20</code>赋值到<code>堆上</code>，不论是<code>栈上还是堆上的__block</code>结构体，都能保证<code>20</code>赋值到<code>堆的结构体</code>里</p>
+<ol start="7">
+<li>思考题：block修改NSMutableString、NSMutableArray、NSMutableDictionary，需不需要添加__block<br>题目如下：以下代码是否可以正确执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    @autoreleasepool &#123;</span><br><span class="line">        NSMutableArray *array &#x3D; [NSMutableArray array];</span><br><span class="line">        void (^block)(void) &#x3D; ^&#123;</span><br><span class="line">            [array addObject: @&quot;5&quot;];</span><br><span class="line">            [array addObject: @&quot;5&quot;];</span><br><span class="line">            NSLog(@&quot;%@&quot;,array);</span><br><span class="line">        &#125;;</span><br><span class="line">        block();</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+分析：可以正确执行，因为在<code>block</code>块中仅仅是使用了<code>array的内存地址</code>，往<code>内存地址</code>中<code>添加内容</code>，并没有修改<code>arry的内存地址</code>，因此<code>array</code>不需要使用<code>__block修饰</code>也可以正确编译。当仅仅是使用<code>局部变量的内存地址</code>，而不是<code>修改</code>的时候，尽量不要添加<code>__block</code>，通过上述分析我们知道一旦添加了<code>__block</code>修饰符，系统会自动创建相应的结构体，占用不必要的内存空间</li>
+</ol>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2020/05/27/iOS内购项目的AppStore推广/" title="iOS 内购项目的App Store推广">iOS 内购项目的App Store推广</a></h2>
+                <p class="excerpt">
+                
+                iOS 11以后的用户可以在App Store内的下载页面内直接购买应用的内购商品，这项功能苹果称作做Promoting In-App Purchases，如果你的App需要在App Store推广自己的内购商品，则需要在App Store推广里上传推广用的图像，另外苹果也在iOS11 SDK里面新
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2020-05-27T08:50:00.000Z" class="post-list__meta--date date">2020-05-27</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2020/05/27/iOS内购项目的AppStore推广/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2020/05/06/iOS数据结构/" title="iOS 数据结构">iOS 数据结构</a></h2>
+                <p class="excerpt">
+                
+                
+数组和链表的区别
+
+
+数组地址连续，查找速度快，操作效率低存储单元在定义时分配，元素个数固定，内存空间要求高
+链表地址不连续，查找速度慢，操作效率高存储单元在程序执行时动态申请，可按需动态增减
+
+
+iOS内存分区的情况，五大区域
+
+
+栈区Stack先进后出FILO由编译器自动分配和释放栈空间多线程
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2020-05-06T08:34:00.000Z" class="post-list__meta--date date">2020-05-06</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2020/05/06/iOS数据结构/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

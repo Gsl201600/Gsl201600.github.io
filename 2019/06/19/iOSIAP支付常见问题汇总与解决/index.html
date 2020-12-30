@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS IAP支付常见问题汇总与解决 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS IAP支付常见问题汇总与解决 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS IAP支付常见问题汇总与解决 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/06/19/iOSIAP%E6%94%AF%E4%BB%98%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%E4%B8%8E%E8%A7%A3%E5%86%B3/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-06-19T09:35:00.000Z" class="post-list__meta--date date">2019-06-19</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS IAP支付常见问题汇总与解决</h1>
+  </header>
+
+  <section class="post">
+    <p><strong>1. 获取不到商品信息的原因</strong></p>
+<ul>
+<li>沙盒的测试账号和你请求商品信息没有关系</li>
+<li><code>iTunes Connect</code>里面对应账号的<code>协议、税务和银行业务</code>信息有没有填完整，填好的应该是这个样子<code>这个很容易疏忽，务必检查</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.06.19.01.png" alt="银行税务信息填写完整状态"><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.06.19.02.png" alt="银行税务信息未填写"></p>
+<ul>
+<li>确认证书是否添加<code>IAP</code>支付功能<code>默认创建的证书是包含该项的</code></li>
+<li>确定是真机测试且手机没有越狱<code>大部分越狱手机也可以测试，深度越狱破坏系统的可能无法调起支付</code></li>
+<li>确定内购商品添加到了需要内购功能的<code>App</code>中</li>
+<li>确定当前运行的<code>App</code>的<code>Bundle ID</code>和后台配置的<code>App</code>的<code>Bundle ID</code>是一致的</li>
+<li>可以尝试先删除旧<code>App</code>，再重新编译生成新的，避免新<code>App</code>未覆盖错误</li>
+<li>如果上线后发现线上包请求不到商品信息，一般发生于首次提交<code>App</code>或添加新商品，可能是苹果缓存的<code>bug</code>，当你的<code>App</code>通过审核以后，你发现在生产环境下获取不到商品，这是因为<code>App</code>虽然过审核了，但是内购商品还没有正式添加到苹果的服务器里，耐心等待一段时间就可以啦，或者去苹果后台刷新配置商品信息列表，然后等待一天左右时间大概就可以了</li>
+</ul>
+<p><strong>2. 如果请求到了商品信息，也发送了购买请求，但是监听购买结果的方法就是不执行</strong></p>
+<ul>
+<li>可以检查一下，是否在工具类初始化的时候，添加了监听，添加监听代码如下</li>
+<li>注：支付工具类一般用单例模式，避免创建多个对象或者对象提前释放，导致苹果回调不会调用支付失败，或者使用<code>self</code>全局化支付工具类对象，不可使支付工具类对象局部变量化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - 单例方法</span><br><span class="line">static IAPPayManager* instance &#x3D; nil;</span><br><span class="line">+ (instancetype)sharedInstance&#123;</span><br><span class="line">  static dispatch_once_t onceToken &#x3D; 0;</span><br><span class="line">  dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">      instance &#x3D; [[IAPPayManager alloc] init];</span><br><span class="line">  &#125;);</span><br><span class="line">  return instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - 重载初始化方法，注册用于处理支付回调的Observer</span><br><span class="line">- (instancetype)init&#123;</span><br><span class="line">    self &#x3D; [super init];</span><br><span class="line">    if (self) &#123;</span><br><span class="line">        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>3. IAP审核环境</strong></li>
+<li>苹果在审核<code>App</code>时，只会在<code>sandbox</code>环境购买，其产生的购买凭证，也只能连接苹果的测试验证服务器，审核时后台要保证沙盒测试环境开放，以免服务器无法验证通过<code>IAP</code>购买，造成<code>App</code>审核被拒</li>
+<li><code>TestFlight</code>测试时也是走的<code>sandbox</code>环境购买</li>
+</ul>
+<p><strong>4. 只要不是红色的状态都是可以进行支付测试的，元数据丢失是因为，在增加内购项目的时候，没有填写完全，产品ID是唯一的，假如你删除了一个内购项目，那么这个产品ID就不能用了，所以填写要慎重</strong><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.06.19.03.png" alt="配置内购商品"></p>
+<p><strong>5. 沙盒测试账号相关</strong><br>用沙盒账号测试支付的包，只能是<code>adhoc</code>签名证书或者<code>develop</code>签名证书打的包，不能是从<code>AppStore</code>或者<code>TestFlight</code>上下载的，还没上线之前<code>App</code>并没有地区之分，沙盒账号随便哪个地区都可以用来测试，弹出的购买提示框会根据当前沙盒账号<code>AppleID</code>的地区显示语言的</p>
+<ul>
+<li>注册沙盒测试账号时，提示报错<code>Unknown Errors while creating Sandbox Tester, Please check Error Log, email=a***st@qq.com</code><br>解决方案：把你的密码设置的复杂点，比如包含数字、字母混大小写等</li>
+</ul>
+<p><strong>6. 支付时提示<code>您已购买此App内购买项目。此项目将免费恢复</code>问题</strong><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.06.19.04.png" alt=""></p>
+<p>此提示说明<code>iTunes</code>订单被卡住，属于<code>苹果ID</code>支付问题，暂时可先选择其他额度进行支付，也可联系苹果的客服人员删除你异常的订单，打开浏览器进入<a target="_blank" rel="noopener" href="http://www.apple.com/cn/support/contact">Apple官方支持</a></p>
+<p><strong>7. 验证服务器地址和需要的参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>receipt-data</code></td>
+<td>The base64 encoded receipt data</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Only used for receipts that contain auto-renewable subscriptions. Your app’s shared secret (a hexadecimal string)</td>
+<td>否，仅用于自动续订，获取方法见共享密钥附录</td>
+</tr>
+<tr>
+<td><code>exclude-old-transactions</code></td>
+<td>Only used for iOS7 style app receipts that contain auto-renewable or non-renewing subscriptions. If value is true, response includes only the latest renewal transaction for any subscriptions</td>
+<td>否，仅用于自动续订或非续订订阅的iOS 7样式的应用收据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在测试服务器中，发送<code>receipt</code>到苹果的测试服务器<a target="_blank" rel="noopener" href="https://sandbox.itunes.apple.com/verifyReceipt">https://sandbox.itunes.apple.com/verifyReceipt</a>验证</li>
+<li>在正式服务器中<code>已上线Appstore</code>，发送<code>receipt</code>到苹果的正式服务器<a target="_blank" rel="noopener" href="https://buy.itunes.apple.com/verifyReceipt">https://buy.itunes.apple.com/verifyReceipt</a>验证</li>
+<li>当我们把应用提交给苹果审核时，苹果也是在<code>sandbox</code>环境购买，其产生的购买凭证，也只能连接苹果的测试验证服务器，所以我们可以先发到苹果的正式服务器验证，如果苹果返回<code>21007</code>，则再一次连接测试服务器进行验证</li>
+</ul>
+<p><strong>8. 苹果返回状态码</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>App Store 验证成功</td>
+</tr>
+<tr>
+<td>21000</td>
+<td>App Store不能读取你提供的JSON对象</td>
+</tr>
+<tr>
+<td>21002</td>
+<td>receipt-data属性中的数据格式错误或丢失</td>
+</tr>
+<tr>
+<td>21003</td>
+<td>receipt无法通过验证</td>
+</tr>
+<tr>
+<td>21004</td>
+<td>提供的共享密码与帐户的文件共享密码不匹配</td>
+</tr>
+<tr>
+<td>21005</td>
+<td>receipt服务器当前不可用</td>
+</tr>
+<tr>
+<td>21006</td>
+<td>该收据有效，但订阅已过期，当此状态代码返回到您的服务器时，收据数据也会被解码并作为响应的一部分返回，仅针对自动续订的iOS 6样式交易收据返回</td>
+</tr>
+<tr>
+<td>21007</td>
+<td>receipt是Sandbox receipt，但却发送至生产系统的验证服务</td>
+</tr>
+<tr>
+<td>21008</td>
+<td>receipt是生产receipt，但却发送至Sandbox环境的验证服务</td>
+</tr>
+<tr>
+<td>21010</td>
+<td>此收据无法授权，就像从未进行过购买一样对待</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>关于苹果服务器验证返回<code>21004</code>的问题说明<br>在购买类型是自动续订时，服务端做验证就要传入这个共享密钥，传入字段为<code>password</code>，共享密钥获取见附录，如果你们的商品不是自动续订，建议不要传入该字段，否则传入内容不正确可能会导致苹果返回<code>21004</code><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.06.19.05.png" alt=""></li>
+</ul>
+<p><strong>9. 国内连接苹果服务器的稳定性</strong><br>开发之初，苹果方就很负责的告知:我们的服务器不稳定。真正开发之后，发现苹果方果然是很负责的，不仅是不稳定，而且足够慢。<code>app store server</code>验证一个收据需要<code>3-6s</code>时间</p>
+<p><strong>10. 经验总结，如下内容已经过验证</strong></p>
+<ul>
+<li><p>程序加入支付队列使用<code>SKMutablePayment</code>和<code>SKPayment</code>的区别<br>两者拥有的属性一样，唯一区别是属性读写权限不同，<code>SKMutablePayment</code>属性具有读写权限，<code>SKPayment</code>属性只读，如果你要使用<code>applicationUsername</code>透传字段，那么就一定要使用<code>SKMutablePayment</code>加入支付队列</p>
+</li>
+<li><p>透传字段<code>applicationUsername</code>可能返回的是<code>nil</code><br>在支付完成后，每笔订单都不调用<code>finishTransaction</code>，如此测试四五笔订单后，重新启动该应用，苹果自动补单会进行，在有些时候该字段就会为空，需要开发者注意</p>
+</li>
+<li><p><code>updatedTransactions:</code>在<code>App</code>整个生命周期只会走一次，所以只要不把订单<code>finishTransaction</code>掉，重启<code>App</code>就会重新走苹果的补单流程(自动调用<code>updatedTransactions:</code>注意需要<code>[[SKPaymentQueue defaultQueue] addTransactionObserver:instance];</code>添加观察者才可以)，逻辑需要自己根据项目实现</p>
+</li>
+<li><p><code>SKPaymentTransaction *transaction</code>属性官方说明</p>
+</li>
+<li><code>transaction.transactionDate</code><br>将订单交易添加到服务器队列的日期，仅当状态为<code>SKPaymentTransactionStatePurchased</code>或<code>SKPaymentTransactionStateRestored</code>时有效</li>
+<li><code>transaction.transactionIdentifier</code><br><code>transactionIdentifier</code>是唯一标识交易支付成功的字符串，此值的格式与收据中的事务<code>transaction_id</code>相同，但是值可能不相同，仅当状态为<code>SKPaymentTransactionStatePurchased</code>或<code>SKPaymentTransactionStateRestored</code>时有效</li>
+<li><code>transaction.originalTransaction</code><br>原始交易<code>id</code>，仅当状态为<code>SKPaymentTransactionStateRestored</code>时有效<code>有值</code></li>
+<li><code>transaction.payment.applicationUsername</code><br>获取之前设置的<code>applicationUsername</code></li>
+<li><p>注意：凭证验证后返回的<code>original_transaction_id</code>和<code>transaction_id</code>一般情况下是相同的，只会在恢复购买时不一样</p>
+</li>
+<li><p><code>transactionReceiptData</code>可以无限验证通过，也就是说一个凭证可以被校验多次，这是刷单方法之一，需要开发者注意，苹果补单流程返回的<code>transactionReceiptData</code>即使同一笔订单也会变</p>
+</li>
+<li><p><code>transactionReceiptData</code>验证解析后，<code>in_app</code>字段出现为空或者多个购买项目，只要不<code>finishTransaction</code>掉订单，下次再支付成功后，返回的<code>transactionReceiptData</code>凭证，就是包含之前的购买记录，最近购买的商品会在列表的第一个</p>
+</li>
+<li>验证凭证，苹果服务器返回的数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;receipt&quot;: &#123;</span><br><span class="line">    &quot;receipt_type&quot;: &quot;ProductionSandbox&quot;,</span><br><span class="line">    &quot;adam_id&quot;: 0,</span><br><span class="line">    &quot;app_item_id&quot;: 0,</span><br><span class="line">    &quot;bundle_id&quot;: &quot;com.Yo***ights&quot;,</span><br><span class="line">    &quot;application_version&quot;: &quot;1&quot;,</span><br><span class="line">    &quot;download_id&quot;: 0,</span><br><span class="line">    &quot;version_external_identifier&quot;: 0,</span><br><span class="line">    &quot;receipt_creation_date&quot;: &quot;2020-06-01 09:37:57 Etc&#x2F;GMT&quot;,</span><br><span class="line">    &quot;receipt_creation_date_ms&quot;: &quot;1591004277000&quot;,</span><br><span class="line">    &quot;receipt_creation_date_pst&quot;: &quot;2020-06-01 02:37:57 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">    &quot;request_date&quot;: &quot;2020-06-01 09:38:55 Etc&#x2F;GMT&quot;,</span><br><span class="line">    &quot;request_date_ms&quot;: &quot;1591004335844&quot;,</span><br><span class="line">    &quot;request_date_pst&quot;: &quot;2020-06-01 02:38:55 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">    &quot;original_purchase_date&quot;: &quot;2013-08-01 07:00:00 Etc&#x2F;GMT&quot;,</span><br><span class="line">    &quot;original_purchase_date_ms&quot;: &quot;1375340400000&quot;,</span><br><span class="line">    &quot;original_purchase_date_pst&quot;: &quot;2013-08-01 00:00:00 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">    &quot;original_application_version&quot;: &quot;1.0&quot;,</span><br><span class="line">    &quot;in_app&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;quantity&quot;: &quot;1&quot;,</span><br><span class="line">        &quot;product_id&quot;: &quot;com.yo***thlycard&quot;,</span><br><span class="line">        &quot;transaction_id&quot;: &quot;10***4780&quot;,</span><br><span class="line">        &quot;original_transaction_id&quot;: &quot;10***4780&quot;,</span><br><span class="line">        &quot;purchase_date&quot;: &quot;2020-06-01 09:36:56 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;purchase_date_ms&quot;: &quot;1591004216000&quot;,</span><br><span class="line">        &quot;purchase_date_pst&quot;: &quot;2020-06-01 02:36:56 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;original_purchase_date&quot;: &quot;2020-06-01 09:36:56 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;original_purchase_date_ms&quot;: &quot;1591004216000&quot;,</span><br><span class="line">        &quot;original_purchase_date_pst&quot;: &quot;2020-06-01 02:36:56 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;is_trial_period&quot;: &quot;false&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;quantity&quot;: &quot;1&quot;,</span><br><span class="line">        &quot;product_id&quot;: &quot;com.yo***iteprime1&quot;,</span><br><span class="line">        &quot;transaction_id&quot;: &quot;10***3950&quot;,</span><br><span class="line">        &quot;original_transaction_id&quot;: &quot;10***3950&quot;,</span><br><span class="line">        &quot;purchase_date&quot;: &quot;2020-06-01 09:35:30 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;purchase_date_ms&quot;: &quot;1591004130000&quot;,</span><br><span class="line">        &quot;purchase_date_pst&quot;: &quot;2020-06-01 02:35:30 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;original_purchase_date&quot;: &quot;2020-06-01 09:35:30 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;original_purchase_date_ms&quot;: &quot;1591004130000&quot;,</span><br><span class="line">        &quot;original_purchase_date_pst&quot;: &quot;2020-06-01 02:35:30 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;is_trial_period&quot;: &quot;false&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;status&quot;: 0,</span><br><span class="line">  &quot;environment&quot;: &quot;Sandbox&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html#//apple_ref/doc/uid/TP40010573-CH104-SW1">附：[官方文档] Validating Receipts With the App Store</a><br><a target="_blank" rel="noopener" href="https://help.apple.com/app-store-connect/#/devf341c0f01">附：[官方文档] 配置自动续期订阅共享密钥</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d9d742e82188">附：iOS开发内购流程</a></li>
+</ul>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/06/26/iOSIAP安全性问题汇总/" title="iOS IAP安全性问题汇总">iOS IAP安全性问题汇总</a></h2>
+                <p class="excerpt">
+                
+                1. 常用的攻击方式
+
+劫持apple server攻击
+重复验证攻击
+跨app攻击
+换价格攻击
+歧义攻击
+中间人攻击
+
+2. 讲解攻击方式及处理
+
+劫持apple server攻击
+
+
+通过dns污染,让客户端通过假的apple_server进行verify,从而认为自己支付成功。这个主要针对客户
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-06-26T06:11:00.000Z" class="post-list__meta--date date">2019-06-26</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/06/26/iOSIAP安全性问题汇总/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/06/05/iOSToast实现/" title="iOS Toast 实现">iOS Toast 实现</a></h2>
+                <p class="excerpt">
+                
+                123&amp;#x2F;&amp;#x2F; 对外暴露两个方法供调用+ (void)showToast:(NSString *)text;+ (void)showToast:(NSString *)text inView:(UIView *)superView;
+1234567891011121314151617
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-06-05T08:40:00.000Z" class="post-list__meta--date date">2019-06-05</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/06/05/iOSToast实现/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

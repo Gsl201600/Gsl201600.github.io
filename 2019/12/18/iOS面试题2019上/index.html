@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS 面试题-2019.上 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS 面试题-2019.上 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS 面试题-2019.上 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/12/18/iOS%E9%9D%A2%E8%AF%95%E9%A2%982019%E4%B8%8A/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-12-18T08:04:00.000Z" class="post-list__meta--date date">2019-12-18</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS 面试题-2019.上</h1>
+  </header>
+
+  <section class="post">
+    <ol>
+<li><p><code>UIView</code>和<code>CALayer</code>是什么关系</p>
+<blockquote>
+<ul>
+<li><code>UIView</code>继承自<code>UIResponder</code>类，可以响应事件</li>
+<li><code>CALayer</code>直接继承自<code>NSObject</code>类，不可以响应事件</li>
+<li><code>UIView</code>是<code>CALayer</code>的<code>delegate</code>(<code>CALayerDelegate</code>)</li>
+<li><code>UIView</code>主要处理事件，<code>CALayer</code>负责绘制</li>
+<li>每个<code>UIView</code>内部都有一个<code>CALayer</code>在背后提供内容的绘制和显示，并且<code>UIView</code>的尺寸样式都由内部的<code>Layer</code>所提供。两者都有树状层级结构，<code>Layer</code>内部有<code>SubLayers</code>，<code>View</code>内部有<code>SubViews</code>，但是<code>Layer</code>比<code>View</code>多了个<code>AnchorPoint</code></li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>NSCache</code>和<code>NSMutableDictionary</code>的相同点与区别</p>
+<blockquote>
+<p>相同点：<br><code>NSCache</code>和<code>NSMutableDictionary</code>功能用法基本是相同的<br>区别：<br><code>NSCache</code>是线程安全的，<code>NSMutableDictionary</code>线程不安全，<code>Mutable开发的类</code>一般都是线程不安全的<br>当内存不足时<code>NSCache</code>会自动释放内存(所以从缓存中取数据的时候总要判断是否为空)<br><code>NSCache</code>可以指定缓存的限额，当缓存超出限额自动释放内存<br><code>NSCache</code>的<code>Key</code>只是对对象进行了<code>Strong</code>引用，而非拷贝，所以不需要实现<code>NSCopying</code>协议</p>
+</blockquote>
+</li>
+<li><p><code>atomic</code>的实现机制；为什么不能保证绝对的线程安全（最好可以结合场景来说）</p>
+<blockquote>
+<ul>
+<li><code>atomic</code>会对属性的<code>setter/getter</code>方法进行加锁，这仅仅只能保证在操作<code>setter/getter</code>方法是安全的。不能保证其他线程的安全</li>
+<li>例如：线程1调用了某一属性的<code>setter</code>方法并进行到了一半，线程2调用其<code>getter</code>方法，那么会执行完<code>setter</code>操作后，再执行<code>getter</code>操作，线程2会获取到线程1<code>setter</code>后的完整的值；当几个线程同时调用同一属性的<code>setter、getter</code>方法时，会获取到一个完整的值，但获取到的值不可控</li>
+</ul>
+</blockquote>
+</li>
+<li><p>iOS 中内省的几个方法</p>
+<blockquote>
+<p>对象在运行时获取其类型的能力称为内省。内省可以有多种方法实现<br>OC运行时内省的4个方法：</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>判断对象类型：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL) isKindOfClass:            &#x2F;&#x2F; 判断是否是这个类或者这个类的子类的实例</span><br><span class="line">-(BOOL) isMemberOfClass:      &#x2F;&#x2F; 判断是否是这个类的实例</span><br></pre></td></tr></table></figure></li>
+<li>判断对象/类是否有这个方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL) respondsToSelector:                      &#x2F;&#x2F; 判断实例是否有这样方法</span><br><span class="line">+(BOOL) instancesRespondToSelector:      &#x2F;&#x2F; 判断类是否有这个方法</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li><p><code>objc</code>在向一个对象发送消息时，发生了什么</p>
+<blockquote>
+<p>根据对象的isa指针找到该对象所属的类，去objc的对应的类中找方法<br>1.首先，在相应操作的对象中的缓存方法列表中找调用的方法，如果找到，转向相应实现并执行<br>2.如果没找到，在相应操作的对象中的方法列表中找调用的方法，如果找到，转向相应实现执行<br>3.如果没找到，去父类指针所指向的对象中执行1，2.<br>4.以此类推，如果一直到根类还没找到，转向拦截调用，走消息转发机制<br>5.如果没有重写拦截调用的方法，程序报错</p>
+</blockquote>
+</li>
+<li><p>你是否接触过OC中的反射机制？简单聊一下概念和使用</p>
+</li>
+</ol>
+<ul>
+<li><code>class</code>反射</li>
+<li>通过类名的字符串形式实例化对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class class &#x3D; NSClassFromString(@&quot;student&quot;); </span><br><span class="line">Student *stu &#x3D; [[class alloc] init];</span><br></pre></td></tr></table></figure></li>
+<li>将类名变为字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class class &#x3D; [Student class];</span><br><span class="line">NSString *className &#x3D; NSStringFromClass(class);</span><br></pre></td></tr></table></figure></li>
+<li><code>SEL</code>的反射</li>
+<li>通过方法的字符串形式实例化方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SEL selector &#x3D; NSSelectorFromString(@&quot;setName&quot;);</span><br><span class="line">[stu performSelector:selector withObject:@&quot;Mike&quot;];</span><br></pre></td></tr></table></figure></li>
+<li>将方法变成字符串<br><code>NSStringFromSelector(@selector(setName:));</code></li>
+</ul>
+<ol start="7">
+<li><p>这个写法会出什么问题<code>@property (nonatomic, copy) NSMutableArray *arr;</code></p>
+<blockquote>
+<p>添加，删除，修改数组内元素的时候，程序会因为找不到对应的方法而崩溃。原因：是因为<code>copy</code>就是复制一个不可变<code>NSArray</code>的对象，不能对<code>NSArray</code>对象进行添加/修改</p>
+</blockquote>
+</li>
+<li><p>如何让自己的类用<code>copy</code>修饰符</p>
+<blockquote>
+<p>若想令自己所写的对象具有拷贝功能，则需实现<code>NSCopying</code>协议。如果自定义的对象分为可变版本与不可变版本，那么就要同时实现<code>NSCopying</code>与<code>NSMutableCopying</code>协议。<br>具体步骤：<br>1.需声明该类遵从<code>NSCopying</code>协议<br>2.实现<code>NSCopying</code>协议的方法，具体区别<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/f84803356cbb">戳这里</a></p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><code>NSCopying</code>协议方法为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (id)copyWithZone:(NSZone *)zone &#123;</span><br><span class="line">  MyObject *copy &#x3D; [[[self class] allocWithZone: zone] init];</span><br><span class="line">  copy.username &#x3D; self.username;</span><br><span class="line">  return copy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="9">
+<li><p>为什么<code>assign</code>不能用于修饰对象</p>
+<blockquote>
+<p>首先我们需要明确，对象的内存一般被分配到堆上，基本数据类型和oc数据类型的内存一般被分配在栈上<br>如果用<code>assign</code>修饰对象，当对象被释放后，指针的地址还是存在的，也就是说指针并没有被置为<code>nil</code>，从而造成了野指针。因为对象是分配在堆上的，堆上的内存由程序员分配释放。而因为指针没有被置为<code>nil</code>，如果后续的内存分配中，刚好分配到了这块内存，就会造成崩溃<br>而<code>assign</code>修饰基本数据类型或oc数据类型，因为基本数据类型是分配在栈上的，由系统分配和释放，所以不会造成野指针</p>
+</blockquote>
+</li>
+<li><p>请写出以下代码输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a[5] &#x3D; &#123;1, 2, 3, 4, 5&#125;;</span><br><span class="line">int *ptr &#x3D; (int *)(&amp;a + 1);</span><br><span class="line">printf(&quot;%d, %d&quot;, *(a + 1), *(ptr + 1));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考答案：2，随机值<br>分析：<br><code>a</code>代表有5个元素的数组的首地址，<code>a[5]</code>的元素分别是1，2，3，4，5。接下来，<code>a + 1</code>表示数据首地址加1，那么就是<code>a[1]</code>，也就是对应于值为2，但是，这里是<code>&amp;a + 1</code>，因为<code>a</code>代表的是整个数组，它的空间大小为<code>5 * sizeof(int)</code>，因此<code>&amp;a + 1</code>就是<code>a + 5</code>。<code>a</code>是个常量指针，指向当前数组的首地址，指针+1就是移动<code>sizeof(int)</code>个字节<br>因此，<code>ptr</code>是指向<code>int *</code>类型的指针，而<code>ptr</code>指向的就是<code>a + 5</code>，那么<code>ptr + 1</code>也相当于<code>a + 6</code>，所以最后的<code>*(ptr + 1)</code>就是一个随机值了。而<code>*(ptr – 1)</code>就相当于<code>a + 4</code>，对应的值就是5</p>
+</blockquote>
+</li>
+<li><p>一个<code>view</code>已经初始化完毕，<code>view</code>上面添加了n个<code>button</code>（可能使用循环创建），除用<code>view</code>的<code>tag</code>之外，还可以采用什么办法来找到自己想要的<code>button</code>来修改<code>Button</code>的值</p>
+<blockquote>
+<p>第一种：如果是点击某个按钮后，才会刷新它的值，其它不用修改，那么不用引用任何按钮，直接在回调时，就已经将接收响应的按钮给传过来了，直接通过它修改即可<br>第二种：点击某个按钮后，所有与之同类型的按钮都要修改值，那么可以通过在创建按钮时将按钮存入到数组中，在需要的时候遍历查找</p>
+</blockquote>
+</li>
+<li><p><code>UIViewController</code>的<code>viewDidUnload、viewDidLoad</code>和<code>loadView</code>分别什么时候调用？<code>UIView</code>的<code>drawRect</code>和<code>layoutSubviews</code>分别起什么作用</p>
+<blockquote>
+<p>第一个问题：<br>在控制器被销毁前会调用<code>viewDidUnload</code>（<code>MRC</code>下才会调用）<br>在控制器没有任何<code>view</code>时，会调用<code>loadView</code><br>在<code>view</code>加载完成时，会调用<code>viewDidLoad</code><br>第二个问题：<br>在调用<code>setNeedsDisplay</code>后，会调用<code>drawRect</code>方法，我们通过在此方法中可以获取到<code>context</code>（设置上下文），就可以实现绘图<br>在调用<code>setNeedsLayout</code>后，会调用<code>layoutSubviews</code>方法，我们可以通过在此方法去调整UI。当然能引起<code>layoutSubviews</code>调用的方式有很多种的，比如添加子视图、滚动<code>scrollview</code>、修改视图的<code>frame</code>等</p>
+</blockquote>
+</li>
+<li><p>自动释放池工作原理</p>
+<blockquote>
+<p>自动释放池是<code>NSAutorelease</code>类的一个实例，当向一个对象发送<code>autorelease</code>消息时，该对象会自动入池，待池销毁时，将会向池中所有对象发送一条<code>release</code>消息，释放对象<br><code>[pool release]、[pool drain]</code>表示的是池本身不会销毁，而是池子中的临时对象都被发送<code>release</code>，从而将对象销毁</p>
+</blockquote>
+</li>
+<li><p>苹果是如何实现<code>autoreleasepool</code>的</p>
+<blockquote>
+<p><code>autoreleasepool</code>是由<code>AutoreleasePoolPage</code>以双向链表的方式实现的，主要通过下列三个函数完成：</p>
+<ul>
+<li>由<code>objc_autoreleasePoolPush</code>作为自动释放池作用域的第一个函数</li>
+<li>使用<code>objc_autorelease</code>将对象加入自动释放池</li>
+<li>由<code>objc_autoreleasePoolPop</code>作为自动释放池作用域的最后一个函数</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>autorelease</code>的对象何时被释放</p>
+<blockquote>
+<p><code>RunLoop</code>在每个事件循环结束后会去自动释放池将所有自动释放对象的引用计数减一，若引用计数变成了0，则会将对象真正销毁掉，回收内存。<br>在没有手动添加<code>Autorelease Pool</code>的情况下，<code>autorelease</code>的对象是在每个事件循环结束后，自动释放池才会对所有自动释放的对象的引用计数减一，若引用计数变成了0，则释放对象，回收内存。因此，若想要早一点释放掉<code>autorelease</code>对象，那么我们可以在对象外加一个自动释放池。比如，在循环处理数据时，临时变量要快速释放，就应该采用这种方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 通过alloc创建的对象，直接加入@autoreleasepool没有作用，需在创建对象后面显式添加autorelease</span><br><span class="line">&#x2F;&#x2F; 通过类方法创建的对象不需要显式添加autorelease，原因是类方法创建的对象系统会自动添加autorelease</span><br><span class="line">for (int i &#x3D; 0; i &lt; 1000000; i++) &#123;</span><br><span class="line">  @autoreleasepool &#123;</span><br><span class="line">    NSString *str &#x3D; @&quot;Abc&quot;;</span><br><span class="line">    str &#x3D; [str lowercaseString];</span><br><span class="line">    str &#x3D; [str stringByAppendingString:@&quot;xyz&quot;];</span><br><span class="line">    NSLog(@&quot;%@&quot;, str);</span><br><span class="line">  &#125; &#x2F;&#x2F; 出了这里，就会去遍历该自动释放池了</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>简述内存管理基本原则</p>
+<blockquote>
+<p>OC内存管理遵循<code>谁创建，谁释放，谁引用，谁管理</code>的机制，当使用<code>alloc、copy(mutableCopy)或者retian</code>一个对象时，你就有义务向它发送一条<code>release或者autorelease</code>消息释放该对象，其他方法创建的对象，不需要由你来管理内存，当对象引用计数为0时，系统将释放该对象，这是OC的手动管理机制（<code>MRC</code>）<br>向一个对象发送一条<code>autorelease</code>消息，这个对象并不会立即销毁，而是将这个对象放入了自动释放池，待池子释放时，它会向池中每一个对象发送一条<code>release</code>消息，以此来释放对象<br>向一个对象发送<code>release</code>消息，并不意味着这个对象被销毁了，而是当这个对象的引用计数为0时，系统才会调用<code>dealloc</code>方法释放该对象和对象本身所拥有的实例</p>
+</blockquote>
+</li>
+<li><p><code>sizeof</code>关键字</p>
+<blockquote>
+<p><code>sizeof</code>是在编译阶段处理，且不能被编译为机器码。<code>sizeof</code>的结果等于对象或类型所占的内存字节数。<code>sizeof</code>的返回值类型为<code>size_t</code><br>变量：<code>int a;  sizeof(a)</code>为4；<br>指针：<code>int *p;  sizeof(p)</code>为4；<br>数组：<code>int b[10]; sizeof(b)</code>为数组的大小4<em>10；<code>int c[0]; sizeof(c)</code>等于0<br><code>sizeof(void)</code>等于1<br>`sizeof(void </em>)`等于4</p>
+</blockquote>
+</li>
+<li><p>什么是离屏渲染？什么情况下会触发？离屏渲染消耗性能的原因</p>
+<blockquote>
+<p>离屏渲染就是在当前屏幕缓冲区以外，新开辟一个缓冲区进行操作<br>离屏渲染触发的场景有以下：</p>
+<ul>
+<li>圆角（同时设置<code>layer.masksToBounds = YES、layer.cornerRadius</code>大于0）</li>
+<li>图层蒙版</li>
+<li>阴影，<code>layer.shadowXXX</code>，如果设置了<code>layer.shadowPath</code>就不会产生离屏渲染</li>
+<li>遮罩，<code>layer.mask</code></li>
+<li>光栅化，<code>layer.shouldRasterize = YES</code></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>离屏渲染消耗性能的原因<br>需要创建新的缓冲区，离屏渲染的整个过程，需要多次切换上下文环境，先是从当前屏幕（<code>On-Screen</code>）切换到离屏（<code>Off-Screen</code>）等到离屏渲染结束以后，将离屏缓冲区的渲染结果显示到屏幕上，又需要将上下文环境从离屏切换到当前屏幕</p>
+</blockquote>
+<ol start="19">
+<li><p>ARC 下，不显式指定任何属性关键字时，默认的关键字都有哪些</p>
+<blockquote>
+<p>基本数据类型默认关键字是：<code>atomic, readwrite, assign</code><br>普通<code>Objective-C</code>对象默认关键字是：<code>atomic, readwrite, strong</code></p>
+</blockquote>
+</li>
+<li><p>OC中的类方法和实例方法有什么本质区别和联系</p>
+<blockquote>
+<p>类方法：</p>
+<ul>
+<li>类方法是属于类对象的</li>
+<li>类方法只能通过类对象调用</li>
+<li>类方法中的 self 是类对象</li>
+<li>类方法可以调用其他的类方法</li>
+<li>类方法中不能访问成员变量</li>
+<li>类方法中不能直接调用对象方法</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>实例方法：</p>
+<ul>
+<li>实例方法是属于实例对象的</li>
+<li>实例方法只能通过实例对象调用</li>
+<li>实例方法中的 self 是实例对象</li>
+<li>实例方法中可以访问成员变量</li>
+<li>实例方法中直接调用实例方法</li>
+<li>实例方法中也可以调用类方法（通过类名）</li>
+</ul>
+</blockquote>
+<ol start="21">
+<li><p>能否向编译后得到的类中增加实例变量？能否向运行时创建的类中添加实例变量？为什么？</p>
+<blockquote>
+<ul>
+<li>不能向编译后得到的类中增加实例变量</li>
+<li>能向运行时创建的类中添加实例变量</li>
+<li>因为编译后的类已经注册在<code>runtime</code>中，类结构体中的<code>objc_ivar_list</code>实例变量的链表和<code>instance_size</code>实例变量的内存大小已经确定，同时<code>runtime</code>会调用<code>class_setIvarLayout</code>或<code>class_setWeakIvarLayout</code>来处理<code>strong weak</code>引用，所以不能向存在的类中添加实例变量<br>运行时创建的类是可以添加实例变量，调用<code>class_addIvar</code>函数。但是得在调用<code>objc_allocateClassPair</code>之后，<code>objc_registerClassPair</code>之前，原因同上</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>runtime</code>如何通过<code>selector</code>找到对应的<code>IMP</code>地址（分别考虑实例方法和类方法）<code>Selector、Method 和 IMP</code>的有什么区别与联系</p>
+<blockquote>
+<p>对于实例方法，每个实例的<code>isa</code>指针指向着对应类对象，而每一个类对象中都有一个对象方法列表。对于类方法，每个类对象的<code>isa</code>指针都指向着对应的元类对象，而每一个元类对象中都有一个类方法列表。方法列表中记录着方法的名称，方法实现，以及参数类型，其实<code>selector</code>本质就是方法名称，通过这个方法名称就可以在方法列表中找到对应的方法实现<br><code>Selector、Method 和 IMP</code>的关系可以这样描述：在运行期分发消息，方法列表中的每一个实体都是一个方法（<code>Method</code>）它的名字叫做选择器（<code>SEL</code>）对应着一种方法实现（<code>IMP</code>）</p>
+</blockquote>
+</li>
+<li><p><code>objc_msgSend、_objc_msgForward</code>都是做什么的？OC 中的消息调用流程是怎样的</p>
+<blockquote>
+<ul>
+<li><code>objc_msgSend</code>是用来做消息发送的。在<code>OC</code>中，对方法的调用都会被转换成内部的消息发送执行</li>
+<li><code>_objc_msgForward</code>是<code>IMP</code>类型（函数指针）用于消息转发的：当向一个对象发送一条消息，但它并没有实现的时候，<code>_objc_msgForward</code>会尝试做消息转发</li>
+<li>在消息调用的过程中，<code>objc_msgSend</code>的动作比较清晰：首先在<code>Class</code>中的缓存查找<code>IMP</code>（没缓存则初始化缓存）如果没找到，则向父类的<code>Class</code>查找。如果一直查找到根类仍旧没有实现，则用<code>_objc_msgForward</code>函数指针代替<code>IMP</code>。最后，执行这个<code>IMP</code>。当调用一个<code>NSObject</code>对象不存在的方法时，并不会马上抛出异常，而是会经过多层转发，层层调用对象的<code>-resolveInstanceMethod:、-forwardingTargetForSelector:、-methodSignatureForSelector:、-forwardInvocation:</code>等方法。其中最后<code>-forwardInvocation:</code>是会有一个<code>NSInvocation</code>对象，这个<code>NSInvocation</code>对象保存了这个方法调用的所有信息，包括<code>Selector名，参数和返回值类型</code>，可以从这个<code>NSInvocation</code>对象里拿到调用的所有参数值<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.12.18.01.jpg" alt=""></li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>class</code>方法和<code>objc_getClass</code>方法有什么区别</p>
+<blockquote>
+<p><code>object_getClass(obj)</code>返回的是<code>obj</code>中的<code>isa</code>指针，即指向类对象的指针；而<code>[obj class]</code>则分两种情况：一是当<code>obj</code>为实例对象时，<code>[obj  class]</code>中<code>class</code>是实例方法，返回的是<code>obj</code>对象中的<code>isa</code>指针；二是当<code>obj</code>为类对象（包括元类和根类以及根元类）时，调用的是类方法，返回的结果为其本身</p>
+</blockquote>
+</li>
+<li><p>OC中向一个<code>nil</code>对象发送消息将会发生什么</p>
+<blockquote>
+<p>在<code>OC</code>中向<code>nil</code>发送消息是完全有效的，只是在运行时不会有任何作用；向一个<code>nil</code>对象发送消息，首先在寻找对象的<code>isa</code>指针时就是<code>0地址</code>返回了，所以不会出现任何错误，也不会崩溃</p>
+</blockquote>
+</li>
+<li><p><code>_objc_msgForward</code>函数是做什么的？直接调用它将会发生什么</p>
+<blockquote>
+<p><code>_objc_msgForward</code>是一个函数指针（和<code>IMP</code>的类型一样）用于消息转发；当向一个对象发送一条消息，但它并没有实现的时候，<code>_objc_msgForward</code>会尝试做消息转发<br><code>objc_msgSend</code>在<code>消息传递</code>中的作用。在<code>消息传递</code>过程中，<code>objc_msgSend</code>的动作比较清晰：首先在<code>Class</code>中的缓存查找<code>IMP</code>（<code>没有缓存则初始化缓存</code>）如果没找到，则向<code>父类的Class</code>查找。如果一直查找到<code>根类</code>仍旧没有实现，则用<code>_objc_msgForward</code>函数指针代替<code>IMP</code>，最后执行这个<code>IMP</code><br>一旦调用了<code>_objc_msgForward</code>，将跳过查找<code>IMP</code>的过程，直接触发<code>消息转发</code>，如果调用了<code>_objc_msgForward</code>，即使这个对象确实已经实现了这个方法，你也会告诉<code>objc_msgSend</code>，我没有在这个对象里找到这个方法的实现，如果用不好会直接导致程序<code>Crash</code></p>
+</blockquote>
+</li>
+<li><p>什么时候会报<code>unrecognized selector</code>的异常</p>
+</li>
+</ol>
+<ul>
+<li>当调用该对象上某个方法，而该对象上没有实现这个方法的时候。可以通过<code>消息转发</code>进行解决，流程见下图<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.12.18.01.jpg" alt=""></li>
+<li><code>OC</code>在向一个对象发送消息时，<code>runtime</code>库会根据对象的<code>isa</code>指针找到该对象实际所属的类，然后在该类中的方法列表以及其父类方法列表中寻找方法运行，如果在最顶层的父类中依然找不到相应的方法时，程序在运行时会挂掉并抛出异常<code>unrecognized selector sent to XXX</code><br><strong>但是在这之前，OC的运行时会给出三次拯救程序崩溃的机会</strong></li>
+<li>Method resolution（消息动态解析）<br><code>OC</code>运行时会调用<code>+resolveInstanceMethod:</code>或者<code>+resolveClassMethod:</code>，让你有机会提供一个函数实现。如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程，否则，运行时就会移到下一步，消息转发（<code>Message Forwarding</code>）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 重写 resolveInstanceMethod: 添加对象方法实现</span><br><span class="line">+ (BOOL)resolveInstanceMethod:(SEL)sel &#123;</span><br><span class="line">    &#x2F;&#x2F; 如果是执行 run 函数，就动态解析，指定新的 IMP</span><br><span class="line">    if (sel &#x3D;&#x3D; NSSelectorFromString(@&quot;run:&quot;)) &#123;</span><br><span class="line">        &#x2F;&#x2F; class: 给哪个类添加方法</span><br><span class="line">        &#x2F;&#x2F; SEL: 添加哪个方法</span><br><span class="line">        &#x2F;&#x2F; IMP: 方法实现 &#x3D;&gt; 函数 &#x3D;&gt; 函数入口 &#x3D;&gt; 函数名</span><br><span class="line">        &#x2F;&#x2F; type: 方法类型：void用v来表示，id参数用@来表示，SEL用:来表示</span><br><span class="line">        class_addMethod(self, sel, (IMP)runMethod, &quot;v@:@&quot;);</span><br><span class="line">        return YES;</span><br><span class="line">    &#125;</span><br><span class="line">    return [super resolveInstanceMethod:sel];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;新的 run 函数</span><br><span class="line">void runMethod(id self, SEL _cmd, NSNumber *meter) &#123;</span><br><span class="line">    NSLog(@&quot;跑了%@&quot;, meter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Fast forwarding（消息接受者重定向）<br>如果目标对象实现了<code>-forwardingTargetForSelector:</code>，<code>Runtime</code>这时就会调用这个方法，给你把这个消息转发给其他对象的机会。只要这个方法返回的不是<code>nil</code>和<code>self</code>，整个消息发送的过程就会被重启，当然发送的对象会变成你返回的那个对象。否则，就会继续<code>Normal Fowarding</code>。 这里叫<code>Fast</code>，只是为了区别下一步的转发机制。因为这一步不会创建任何新的对象，但下一步转发会创建一个<code>NSInvocation</code>对象，所以相对更快点<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 消息接受者重定向</span><br><span class="line">- (id)forwardingTargetForSelector:(SEL)aSelector&#123;</span><br><span class="line">    if (aSelector &#x3D;&#x3D; @selector(run:)) &#123;</span><br><span class="line">        return [[Person alloc] init];</span><br><span class="line">        &#x2F;&#x2F; 返回 Person 对象，让 Person 对象接收这个消息</span><br><span class="line">    &#125;</span><br><span class="line">    return [super forwardingTargetForSelector:aSelector];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Normal forwarding（消息重定向）<br>这一步是<code>Runtime</code>最后一次给你挽救的机会。首先它会发送<code>-methodSignatureForSelector:</code>消息获得函数的参数和返回值类型。如果<code>-methodSignatureForSelector:</code>返回<code>nil</code>，<code>Runtime</code>则会发出<code>-doesNotRecognizeSelector:</code>消息，程序这时也就挂掉了。如果返回了一个函数签名，<code>Runtime</code>就会创建一个<code>NSInvocation</code>对象并发送<code>-forwardInvocation:</code>消息给目标对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取函数的参数和返回值类型，返回签名</span><br><span class="line">- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector &#123;</span><br><span class="line">    if ([NSStringFromSelector(aSelector) isEqualToString:@&quot;run:&quot;]) &#123;</span><br><span class="line">        return [NSMethodSignature signatureWithObjCTypes:&quot;v@:@&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return [super methodSignatureForSelector:aSelector];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 消息重定向</span><br><span class="line">- (void)forwardInvocation:(NSInvocation *)anInvocation &#123;</span><br><span class="line">    &#x2F;&#x2F; 从 anInvocation 中获取消息</span><br><span class="line">    SEL sel &#x3D; anInvocation.selector;</span><br><span class="line">    if (sel &#x3D;&#x3D; NSSelectorFromString(@&quot;run:&quot;)) &#123;</span><br><span class="line">        &#x2F;&#x2F; 1. 指定当前类的一个方法作为IMP</span><br><span class="line">        &#x2F;&#x2F; anInvocation.selector &#x3D; @selector(readBook:);</span><br><span class="line">        &#x2F;&#x2F; [anInvocation invoke];</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F; 2. 指定其他类来执行这个IMP</span><br><span class="line">        Person *p &#x3D; [[Person alloc] init];</span><br><span class="line">        &#x2F;&#x2F; 判断 Person 对象方法是否可以响应 sel</span><br><span class="line">        if([p respondsToSelector:sel]) &#123;</span><br><span class="line">            &#x2F;&#x2F; 若可以响应，则将消息转发给其他对象处理</span><br><span class="line">            [anInvocation invokeWithTarget:p];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            &#x2F;&#x2F; 若仍然无法响应，则报错：找不到响应方法</span><br><span class="line">            [self doesNotRecognizeSelector:sel];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        [super forwardInvocation:anInvocation];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)doesNotRecognizeSelector:(SEL)aSelector &#123;</span><br><span class="line">    [super doesNotRecognizeSelector:aSelector];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>既然<code>-forwardingTargetForSelector:</code>和<code>-forwardInvocation:</code>都可以将消息转发给其他对象处理，那么两者的区别在哪？</strong><br>区别就在于<code>-forwardingTargetForSelector:</code>只能将消息转发给一个对象。而<code>-forwardInvocation:</code>可以把消息存储，在你觉得合适的时机转发出去，或者不处理这个消息。修改消息的target，selector，参数等。将消息转发给多个对象</li>
+</ul>
+<ol start="28">
+<li><p><code>iOS layoutSubviews</code>什么时候会被调用</p>
+<blockquote>
+<ul>
+<li><code>init</code>方法不会调用<code>layoutSubviews</code>，但是是用<code>initWithFrame</code>进行初始化时，当<code>rect</code>的值不为<code>CGRectZero</code>时，会触发</li>
+<li><code>addSubview</code>会触发<code>layoutSubviews</code>方法</li>
+<li><code>setFrame</code>只有当设置的<code>frame</code>的参数的<code>size</code>与原来的<code>size</code>不同，才会触发其<code>view</code>的<code>layoutSubviews</code>方法</li>
+<li>滑动<code>UIScrollView</code>会调用<code>scrollview</code>及<code>scrollview</code>上的<code>view</code>的<code>layoutSubviews</code>方法</li>
+<li>旋转设备只会调用<code>VC</code>的<code>view</code>的<code>layoutSubviews</code>方法</li>
+<li>直接调用<code>[self setNeedsLayout];</code>（这个在上面苹果官方文档里有说明）<br><code>-layoutSubviews</code>方法：这个方法默认没有做任何事情，需要子类进行重写<br><code>-setNeedsLayout</code>方法：标记为需要重新布局，异步调用<code>layoutIfNeeded</code>刷新布局，不立即刷新，但<code>layoutSubviews</code>一定会被调用<br><code>-layoutIfNeeded</code>方法：如果有需要刷新的标记，立即调用<code>layoutSubviews</code>进行布局（如果没有标记，不会调用<code>layoutSubviews</code>）<br>如果要立即刷新，要先调用<code>[view setNeedsLayout]</code>，把标记设为需要布局，然后马上调用<code>[view layoutIfNeeded]</code>，实现布局<br>在视图第一次显示之前，标记总是<code>需要刷新</code>的，可以直接调用<code>[view layoutIfNeeded]</code></li>
+</ul>
+</blockquote>
+</li>
+<li><p>下面代码会发生什么问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, strong) NSString *str;</span><br><span class="line"></span><br><span class="line">dispatch_queue_t queue &#x3D; dispatch_queue_create(&quot;parallel&quot;, DISPATCH_QUEUE_CONCURRENT);</span><br><span class="line">for (int i &#x3D; 0; i &lt; 1000000 ; i++) &#123;</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        self.str &#x3D; [NSString stringWithFormat:@&quot;changzifuchaung:%d&quot;,i];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>会<code>crash</code>。因为在并行队列<code>DISPATCH_QUEUE_CONCURRENT</code>中异步<code>dispatch_async</code>对<code>str</code>属性进行赋值，就会导致<code>str</code>已经被<code>release</code>了，还会执行<code>release</code>。这就是向已释放内存的对象发送消息而发生<code>crash</code><br>详细解析：对<code>str</code>属性<code>strong</code>修饰进行赋值，相当与<code>MRC</code>中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (void)setStr:(NSString *)str&#123;</span><br><span class="line">    if (str &#x3D;&#x3D; _str) return;</span><br><span class="line">    id pre &#x3D; _str;</span><br><span class="line">    [str retain];&#x2F;&#x2F;1.先保留新值</span><br><span class="line">    _str &#x3D; str;&#x2F;&#x2F;2.再进行赋值</span><br><span class="line">    [pre release];&#x2F;&#x2F;3.释放旧值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么假如<code>并发队列</code>里调度的<code>线程A</code>执行到<code>步骤1</code>，还没到<code>步骤2</code>时，<code>线程B</code>执行到<code>步骤3</code>，那么当<code>线程A</code>再执行<code>步骤3</code>时，旧值就会被<code>过度释放</code>，导致向已释放内存的对象发送消息而崩溃</p>
+</li>
+</ol>
+<ul>
+<li><p>追问：怎么修改这段代码变为不崩溃呢</p>
+<blockquote>
+<p>1、使用串行队列<br>将<code>set</code>方法改成在串行队列中执行就行，这样即使异步，但所有<code>block</code>操作追加在队列最后依次执行<br>2、使用<code>atomic</code><br><code>atomic</code>关键字相当于在<code>setter</code>方法加锁，这样每次执行<code>setter</code>都是线程安全的，但这只是单独针对<code>setter</code>方法而言的狭义的线程安全<br>3、使用<code>weak</code>关键字<br><code>weak</code>的<code>setter</code>没有<code>保留新值</code>的操作，所以不会引发重复释放。当然这个时候要看具体情况能否使用<code>weak</code>，可能值并不是所需要的值<br>4、使用互斥锁，保证数据访问的唯一性<code>@synchronized (self) &#123;self.str = [NSString stringWithFormat:@&quot;changzifuchaung:%d&quot;,i];&#125;</code><br>5、使用<code>Tagged Pointer</code><br><code>Tagged Pointer</code>是苹果在64位系统引入的内存技术。简单来说就是对于<code>NSString</code>(内存小于60位的字符串)或<code>NSNumber</code>(小于2^31)，64位的指针有8个字节，完全可以直接用这个空间来直接表示值，这样的话其实会将<code>NSString</code>和<code>NSNumber</code>对象由一个<code>指针</code>转换成一个<code>值类型</code>，而值类型的<code>setter和getter</code>又是原子的，从而线程安全</p>
+</blockquote>
+</li>
+<li><p>发散：下面代码会<code>crash</code>吗</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, strong) NSString *str;</span><br><span class="line"></span><br><span class="line">dispatch_queue_t queue &#x3D; dispatch_queue_create(&quot;parallel&quot;, DISPATCH_QUEUE_CONCURRENT);</span><br><span class="line">for (int i &#x3D; 0; i &lt; 1000000 ; i++) &#123;</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        &#x2F;&#x2F; 相比上面，仅字符串变短了</span><br><span class="line">        self.str &#x3D; [NSString stringWithFormat:@&quot;%d&quot;,i];</span><br><span class="line">        NSLog(@&quot;%d, %s, %p&quot;, i, object_getClassName(self.str), self.str);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不会<code>crash</code>。而且发现<code>str</code>这个字符串类型是<code>NSTaggedPointerString</code><br><code>Tagged Pointer</code>是一个能够提升性能、节省内存的有趣的技术<br><code>Tagged Pointer</code>专门用来存储小的对象，例如<code>NSNumber</code>和<code>NSDate</code>(后来可以存储小字符串)<br><code>Tagged Pointer指针的值</code>不再是<code>地址</code>了，而是<code>真正的值</code>。所以，实际上它不再是一个<code>对象</code>了，它只是一个披着对象皮的<code>普通变量</code>而已<br>它的内存并不存储在<code>堆</code>中，也不需要<code>malloc和free</code>，所以拥有极快的读取和创建速度</p>
+</li>
+</ul>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/12/25/hello-world1/" title="一周年快乐">一周年快乐</a></h2>
+                <p class="excerpt">
+                
+                去年这个时候发布了我的第一篇博文 — Hello World转眼已经写了一年了物是人非，感慨良多不管怎样我还是会继续坚持下去的，加油…圣诞节快乐…我的博客上线运行中…
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-12-24T16:00:00.000Z" class="post-list__meta--date date">2019-12-25</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/12/25/hello-world1/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/12/11/iOS关于OtherLinkerFlags的作用/" title="iOS 关于Other Linker Flags的作用">iOS 关于Other Linker Flags的作用</a></h2>
+                <p class="excerpt">
+                
+                在用第三方库时，我们常常在Xcode的Build Settings下Other Linker Flags里面加入-ObjC标志，它和Objective-C的一个重要特性：类别（category)有关
+
+根据官方的解释，Unix的标准静态库实现和Objective-C的动态特性之间有一些冲突：Obje
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-12-11T06:43:00.000Z" class="post-list__meta--date date">2019-12-11</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/12/11/iOS关于OtherLinkerFlags的作用/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

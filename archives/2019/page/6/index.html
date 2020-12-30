@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>Gsl&#39;s Library | 如颖随行</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gsl&#39;s Library | 如颖随行">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Gsl&#39;s Library | 如颖随行">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <div class="main-post-list">
+    
+  <ol class="post-list">
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/19/iOS悬浮按钮/" title="link to post.title">iOS 悬浮按钮</a></h2>
+      <p class="excerpt">
+    
+      新建继承于UIWindow的类.h文件如下123456789101112131415typedef void(^ClickBlock)(NSInteger i);@interface GSLFloatingView : UIWindow@property (nonatomic, copy) ClickBlock clickBlock;&amp;#x2F;&amp;#x2F;重要：所有图片都要是圆形的，程序里并没有
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-19T07:23:00.000Z" class="post-list__meta--date date">2019-02-19</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/19/iOS悬浮按钮/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/18/iOS瀑布流布局实现详解/" title="link to post.title">iOS 瀑布流布局实现详解</a></h2>
+      <p class="excerpt">
+    
+      新建文件继承自UICollectionViewLayout.h内容如下：1234567891011121314151617181920@class WaterFlowLayout;@protocol WaterFlowLayoutDelegate &amp;lt;NSObject&amp;gt;&amp;#x2F;&amp;#x2F;使用delegate取得每一个Cell的高度- (CGFloat)waterFlow:(Wate
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-18T10:16:00.000Z" class="post-list__meta--date date">2019-02-18</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/18/iOS瀑布流布局实现详解/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/15/iOS动画-购物车动画为例/" title="link to post.title">iOS 动画-购物车动画为例</a></h2>
+      <p class="excerpt">
+    
+      设定动画设定动画的属性和说明
+
+
+
+属性
+说明
+
+
+
+
+duration
+动画的时长
+
+
+repeatCount
+重复的次数。不停重复设置为 HUGE_VALF
+
+
+repeatDuration
+设置动画的时间。在该时间内动画一直执行，不计次数。
+
+
+beginTime
+指定动画开始的时间。从开始延迟几秒的话，设置为【CACurrentMediaTime() + 秒数】 的方式
+
+
+timingF
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-15T06:21:00.000Z" class="post-list__meta--date date">2019-02-15</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/15/iOS动画-购物车动画为例/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/14/iOS中UIWebView与WKWebView/" title="link to post.title">iOS 中UIWebView与WKWebView</a></h2>
+      <p class="excerpt">
+    
+      1. UIWebViewUIWebView 适用于iOS8.0以下的系统版本iOS原生没有提供js直接调用OC的方式，只能通过UIWebView的UIWebViewDelegate协议方法来做拦截，并在这个方法中，根据url来调用OC方法；1-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-14T07:58:00.000Z" class="post-list__meta--date date">2019-02-14</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/14/iOS中UIWebView与WKWebView/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/02/iOS每隔一段时间执行一次代码/" title="link to post.title">iOS 每隔一段时间执行一次代码</a></h2>
+      <p class="excerpt">
+    
+      123456789101112131415161718192021&amp;#x2F;&amp;#x2F;每隔一分钟执行一次打印&amp;#x2F;&amp;#x2F; GCD定时器static dispatch_source_t _timer;&amp;#x2F;&amp;#x2F;设置时间间隔NSTimeInterval period &amp;#x3D; 60.f;dispatch_queue_t queue &amp;#x3D; dispatch_ge
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-02T05:32:00.000Z" class="post-list__meta--date date">2019-02-02</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/02/iOS每隔一段时间执行一次代码/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/01/iOS快速定位到系统设置界面/" title="link to post.title">iOS 快速定位到系统设置界面</a></h2>
+      <p class="excerpt">
+    
+      12345678910111213141516171819202122232425&amp;#x2F;&amp;#x2F;定位服务设置界面NSURL * url &amp;#x3D; [NSURL URLWithString:@&amp;quot;prefs:root&amp;#x3D;LOCATION_SERVICES&amp;quot;];if ([[UIApplication sharedApplication] canOpenURL:u
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-01T07:14:00.000Z" class="post-list__meta--date date">2019-02-01</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/01/iOS快速定位到系统设置界面/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/01/31/iOS绘制圆角图片方法/" title="link to post.title">iOS 防止离屏渲染绘制圆角图片方法</a></h2>
+      <p class="excerpt">
+    
+      
+什么是离屏渲染离屏渲染就是在当前屏幕缓冲区以外，新开辟一个缓冲区进行操作
+离屏渲染触发的场景
+
+
+圆角（同时设置layer.masksToBounds = YES、layer.cornerRadius大于0）
+图层蒙版
+阴影，layer.shadowXXX，如果设置了layer.shadowPath就不会产生离屏渲染
+遮罩，layer.mask
+光栅化，layer.shouldRasterize
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-01-31T07:33:00.000Z" class="post-list__meta--date date">2019-01-31</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/01/31/iOS绘制圆角图片方法/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/01/30/iOS给图片加水印/" title="link to post.title">iOS 给图片加水印</a></h2>
+      <p class="excerpt">
+    
+      12345678910111213141516171819202122232425&amp;#x2F;&amp;#x2F; 给图片加水印- (void)addWatermarkToPicture&amp;#123;    &amp;#x2F;&amp;#x2F; 获取原图片    UIImage *image &amp;#x3D; [UIImage imageNamed:@&amp;quot;FZSDKLib.bundle&amp;#x2F;001.jpg&amp;q
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-01-30T09:40:00.000Z" class="post-list__meta--date date">2019-01-30</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/01/30/iOS给图片加水印/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/01/29/iOS屏幕截图总结/" title="link to post.title">iOS 屏幕截图总结</a></h2>
+      <p class="excerpt">
+    
+      
+按屏幕截图，即全屏截图12345678910111213141516- (void)doScreenShot&amp;#123;    &amp;#x2F;&amp;#x2F; 开启图片上下文    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);    &amp;#x2F;&amp;#x2F; 获取当前上下文    CGContextRef c
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-01-29T07:44:00.000Z" class="post-list__meta--date date">2019-01-29</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/01/29/iOS屏幕截图总结/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/01/23/iOSAttempttopresent...whoseviewisnotinthewindowhierarchy/" title="link to post.title">iOS 报错Attempt to present...whose view is not in the window hierarchy!</a></h2>
+      <p class="excerpt">
+    
+      Attempt to present &amp;lt;*ViewController: 0x**&amp;gt; on &amp;lt;ViewController: 0x**&amp;gt; whose view is not in the window hierarchy!12345678910111213141516171819202122232425#简单来说，就是当前的ViewController还没有被加载完，就调用
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-01-23T10:18:00.000Z" class="post-list__meta--date date">2019-01-23</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/01/23/iOSAttempttopresent...whoseviewisnotinthewindowhierarchy/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+  </ol>
+
+
+  <nav class="pagination" role="navigation">
+    
+      <a class="older-posts pagination__newer btn btn-small btn-tertiary" href="/archives/2019/page/5/">&larr; 最近</a>
+    
+    <span class="pagination__page-number" >  6 / 7 </span>
+    
+      <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/2019/page/7/">更早 &rarr;</a>
+    
+  </nav>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+    
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</div>
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

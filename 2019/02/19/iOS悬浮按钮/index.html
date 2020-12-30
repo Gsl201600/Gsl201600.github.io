@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS 悬浮按钮 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS 悬浮按钮 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS 悬浮按钮 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/02/19/iOS%E6%82%AC%E6%B5%AE%E6%8C%89%E9%92%AE/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-02-19T07:23:00.000Z" class="post-list__meta--date date">2019-02-19</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS 悬浮按钮</h1>
+  </header>
+
+  <section class="post">
+    <p>新建继承于UIWindow的类<br>.h文件如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">typedef void(^ClickBlock)(NSInteger i);</span><br><span class="line"></span><br><span class="line">@interface GSLFloatingView : UIWindow</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy) ClickBlock clickBlock;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;重要：所有图片都要是圆形的，程序里并没有自动处理成圆形</span><br><span class="line">&#x2F;&#x2F;  warning: frame的长宽必须相等</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame mainImageName:(NSString *)mainImageName imagesAndTitle:(NSDictionary *)imagesAndTitle backgroundColor:(UIColor *)bgColor;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 显示（默认）</span><br><span class="line">- (void)showWindow;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 隐藏</span><br><span class="line">- (void)dissmissWindow;</span><br></pre></td></tr></table></figure><br>.m 实现文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;GSLFloatingView.h&quot;</span><br><span class="line"></span><br><span class="line">#define WIDTH self.frame.size.width</span><br><span class="line">#define HEIGHT self.frame.size.height</span><br><span class="line">#define kScreenWidth [UIScreen mainScreen].bounds.size.width</span><br><span class="line">#define kScreenHeight [UIScreen mainScreen].bounds.size.height</span><br><span class="line"></span><br><span class="line">#define animateDuration 0.3       &#x2F;&#x2F;位置改变动画时间</span><br><span class="line">#define showDuration 0.1          &#x2F;&#x2F;展开动画时间</span><br><span class="line">#define statusChangeDuration  3.0    &#x2F;&#x2F;状态改变时间</span><br><span class="line">#define normalAlpha  0.8           &#x2F;&#x2F;正常状态时背景alpha值</span><br><span class="line">#define sleepAlpha  0.3           &#x2F;&#x2F;隐藏到边缘时的背景alpha值</span><br><span class="line">#define myBorderWidth 1.0         &#x2F;&#x2F;外框宽度</span><br><span class="line">#define marginWith  5             &#x2F;&#x2F;间隔</span><br><span class="line"></span><br><span class="line">@interface GSLFloatingView ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic, assign) CGFloat frameWidth;</span><br><span class="line">@property (nonatomic, assign) BOOL isShowTab;</span><br><span class="line">@property (nonatomic, strong) UIPanGestureRecognizer *panGesture;</span><br><span class="line">@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;</span><br><span class="line">@property (nonatomic, strong) UIButton *mainImageButton;</span><br><span class="line">@property (nonatomic, strong) UIView *contentView;</span><br><span class="line">@property (nonatomic, strong) NSDictionary *imagesAndTitle;</span><br><span class="line">@property (nonatomic, strong) UIColor *bgColor;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation GSLFloatingView</span><br><span class="line"></span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame mainImageName:(NSString *)mainImageName imagesAndTitle:(NSDictionary *)imagesAndTitle backgroundColor:(UIColor *)bgColor&#123;</span><br><span class="line">    if (self &#x3D; [super initWithFrame:frame]) &#123;</span><br><span class="line">        &#x2F;&#x2F;  断言NSAssert()是一个宏，用于开发阶段调试程序中的Bug，通过为NSAssert()传递条件表达式来断定是否属于Bug，满足条件返回真值，程序继续运行，如果返回假值，则抛出异常，并且可以自定义异常描述。</span><br><span class="line">        &#x2F;&#x2F;  Xcode 已经默认将release环境下的断言取消了, 免除了忘记关闭断言造成的程序不稳定. 所以不用担心 在开发时候大胆使用。</span><br><span class="line">        NSAssert(mainImageName !&#x3D; nil, @&quot;mainImageName can&#39;t be nil !&quot;);</span><br><span class="line">        NSAssert(imagesAndTitle !&#x3D; nil, @&quot;imagesAndTitle can&#39;t be nil !&quot;);</span><br><span class="line">        _isShowTab &#x3D; NO;</span><br><span class="line"></span><br><span class="line">        self.backgroundColor &#x3D; [UIColor clearColor];</span><br><span class="line">        self.windowLevel &#x3D; UIWindowLevelAlert + 1;</span><br><span class="line">        self.rootViewController &#x3D; [[UIViewController alloc] init];</span><br><span class="line">        [self makeKeyAndVisible];</span><br><span class="line"></span><br><span class="line">        _bgColor &#x3D; bgColor;</span><br><span class="line">        _frameWidth &#x3D; frame.size.width;</span><br><span class="line">        _imagesAndTitle &#x3D; imagesAndTitle;</span><br><span class="line"></span><br><span class="line">        _contentView &#x3D; [[UIView alloc] initWithFrame:CGRectMake(_frameWidth, 0, imagesAndTitle.count * (_frameWidth + 5), _frameWidth)];</span><br><span class="line">        _contentView.alpha &#x3D; 0;</span><br><span class="line">        [self addSubview:_contentView];</span><br><span class="line">        &#x2F;&#x2F;添加按钮</span><br><span class="line">        [self setButtons];</span><br><span class="line"></span><br><span class="line">        _mainImageButton &#x3D; [UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">        _mainImageButton.frame &#x3D; CGRectMake(0, 0, frame.size.width, frame.size.height);</span><br><span class="line">        [_mainImageButton setImage:[UIImage imageNamed:mainImageName] forState:UIControlStateNormal];</span><br><span class="line">        _mainImageButton.alpha &#x3D; sleepAlpha;</span><br><span class="line">        [_mainImageButton addTarget:self action:@selector(mainButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">        [self addSubview:_mainImageButton];</span><br><span class="line"></span><br><span class="line">        [self doBorderWidth:myBorderWidth color:nil cornerRadius:_frameWidth&#x2F;2];</span><br><span class="line"></span><br><span class="line">        _panGesture &#x3D; [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(locationChange:)];</span><br><span class="line">        _panGesture.delaysTouchesBegan &#x3D; NO;</span><br><span class="line">        [self addGestureRecognizer:_panGesture];</span><br><span class="line"></span><br><span class="line">        _tapGesture &#x3D; [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mainButtonDidClicked:)];</span><br><span class="line">        [self addGestureRecognizer:_tapGesture];</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;设备旋转的时候收回按钮</span><br><span class="line">        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 显示（默认）</span><br><span class="line">- (void)showWindow&#123;</span><br><span class="line">    self.hidden &#x3D; NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 隐藏</span><br><span class="line">- (void)dissmissWindow&#123;</span><br><span class="line">    self.hidden &#x3D; YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)setButtons&#123;</span><br><span class="line">    int i &#x3D; 0;</span><br><span class="line">    for (NSString *key in _imagesAndTitle) &#123;</span><br><span class="line">        UIButton *button &#x3D; [UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">        button.frame &#x3D; CGRectMake(self.frameWidth * i, 0, self.frameWidth, self.frameWidth);</span><br><span class="line">        button.backgroundColor &#x3D; [UIColor clearColor];</span><br><span class="line"></span><br><span class="line">        UIImage *image &#x3D; [UIImage imageNamed:key];</span><br><span class="line">        [button setTitle:_imagesAndTitle[key] forState:UIControlStateNormal];</span><br><span class="line">        [button setImage:image forState:UIControlStateNormal];</span><br><span class="line"></span><br><span class="line">        button.tag &#x3D; i;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 则默认image在左，title在右</span><br><span class="line">        &#x2F;&#x2F; 改成image在上，title在下</span><br><span class="line">        button.titleEdgeInsets &#x3D; UIEdgeInsetsMake(self.frameWidth&#x2F;2, -image.size.width, 0.f, 0.f);</span><br><span class="line">        button.imageEdgeInsets &#x3D; UIEdgeInsetsMake(2.f, 8.f, 16.f, -button.titleLabel.bounds.size.width + 8);</span><br><span class="line">        button.titleLabel.font &#x3D; [UIFont systemFontOfSize:self.frameWidth&#x2F;5];</span><br><span class="line">        [button addTarget:self action:@selector(itemsDidClicked:) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">        [self.contentView addSubview:button];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark  ------- 绘图操作 ----------</span><br><span class="line">- (void)drawRect:(CGRect)rect &#123;</span><br><span class="line">    [self drawDash];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;分割线</span><br><span class="line">- (void)drawDash&#123;</span><br><span class="line">    CGContextRef context &#x3D; UIGraphicsGetCurrentContext();</span><br><span class="line">    CGContextBeginPath(context);</span><br><span class="line">    CGContextSetLineWidth(context, 0.1);</span><br><span class="line">    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);</span><br><span class="line">    CGFloat lengths[] &#x3D; &#123;2, 1&#125;;</span><br><span class="line">    CGContextSetLineDash(context, 0, lengths, 2);</span><br><span class="line">    for (int i &#x3D; 1; i &lt; _imagesAndTitle.count; i++) &#123;</span><br><span class="line">        CGContextMoveToPoint(context, self.contentView.frame.origin.x + i * self.frameWidth, marginWith * 2);</span><br><span class="line">        CGContextAddLineToPoint(context, self.contentView.frame.origin.x + i * self.frameWidth, self.frameWidth - marginWith * 2);</span><br><span class="line">    &#125;</span><br><span class="line">    CGContextStrokePath(context);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark ------- contentview 操作 --------------------</span><br><span class="line">&#x2F;&#x2F;按钮在屏幕右边时，左移contentview</span><br><span class="line">- (void)moveContentviewLeft&#123;</span><br><span class="line">    _contentView.frame &#x3D; CGRectMake(self.frameWidth&#x2F;3, 0, _contentView.frame.size.width, _contentView.frame.size.height);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;按钮在屏幕左边时，contentview恢复默认</span><br><span class="line">- (void)resetContentview&#123;</span><br><span class="line">    _contentView.frame &#x3D; CGRectMake(self.frameWidth + marginWith, 0, _contentView.frame.size.width, _contentView.frame.size.height);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;改变位置</span><br><span class="line">- (void)locationChange:(UIPanGestureRecognizer*)panGesture&#123;</span><br><span class="line">    CGPoint panPoint &#x3D; [panGesture locationInView:[UIApplication sharedApplication].keyWindow];</span><br><span class="line">    if (panGesture.state &#x3D;&#x3D; UIGestureRecognizerStateBegan) &#123;</span><br><span class="line">        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeStatus) object:nil];</span><br><span class="line">        _mainImageButton.alpha &#x3D; normalAlpha;</span><br><span class="line">    &#125;else if (panGesture.state &#x3D;&#x3D; UIGestureRecognizerStateChanged) &#123;</span><br><span class="line">        self.center &#x3D; CGPointMake(panPoint.x, panPoint.y);</span><br><span class="line">    &#125;else if (panGesture.state &#x3D;&#x3D; UIGestureRecognizerStateEnded)&#123;</span><br><span class="line">        [self performSelector:@selector(changeStatus) withObject:nil afterDelay:statusChangeDuration];</span><br><span class="line">        if (panPoint.x &lt;&#x3D; kScreenWidth&#x2F;2) &#123;</span><br><span class="line">            if (panPoint.y &lt;&#x3D; 40 + HEIGHT&#x2F;2 &amp;&amp; panPoint.x &gt;&#x3D; 20 + WIDTH&#x2F;2) &#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(panPoint.x, HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else if (panPoint.y &gt;&#x3D; kScreenHeight - HEIGHT&#x2F;2 - 40 &amp;&amp; panPoint.x &gt;&#x3D; 20 +WIDTH&#x2F;2)&#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(panPoint.x, kScreenHeight-HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else if (panPoint.x &lt; WIDTH&#x2F;2 + 20 &amp;&amp; panPoint.y &gt; kScreenHeight - HEIGHT&#x2F;2)&#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(WIDTH&#x2F;2, kScreenHeight-HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                CGFloat pointy &#x3D; panPoint.y &lt; HEIGHT&#x2F;2 ? HEIGHT&#x2F;2 :panPoint.y;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(WIDTH&#x2F;2, pointy);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else if (panPoint.x &gt; kScreenWidth&#x2F;2)&#123;</span><br><span class="line">            if (panPoint.y &lt;&#x3D; 40 + HEIGHT&#x2F;2 &amp;&amp; panPoint.x &lt; kScreenWidth - WIDTH&#x2F;2 - 20) &#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(panPoint.x, HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else if (panPoint.y &gt;&#x3D; kScreenHeight - 40 - HEIGHT&#x2F;2 &amp;&amp; panPoint.x &lt; kScreenWidth - WIDTH&#x2F;2 - 20)&#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(panPoint.x, kScreenHeight-HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else if (panPoint.x &gt; kScreenWidth - WIDTH&#x2F;2 - 20 &amp;&amp; panPoint.y &lt; HEIGHT&#x2F;2)&#123;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(kScreenWidth-WIDTH&#x2F;2, HEIGHT&#x2F;2);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                CGFloat pointy &#x3D; panPoint.y &gt; kScreenHeight-HEIGHT&#x2F;2 ? kScreenHeight-HEIGHT&#x2F;2 :panPoint.y;</span><br><span class="line">                [UIView animateWithDuration:animateDuration animations:^&#123;</span><br><span class="line">                    self.center &#x3D; CGPointMake(kScreenWidth-WIDTH&#x2F;2, pointy);</span><br><span class="line">                &#125;];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;点击事件</span><br><span class="line">- (void)mainButtonDidClicked:(UITapGestureRecognizer*)tapGesture&#123;</span><br><span class="line">    _mainImageButton.alpha &#x3D; normalAlpha;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;拉出悬浮窗</span><br><span class="line">    if (self.center.x &#x3D;&#x3D; 0) &#123;</span><br><span class="line">        self.center &#x3D; CGPointMake(WIDTH&#x2F;2, self.center.y);</span><br><span class="line">    &#125;else if (self.center.x &#x3D;&#x3D; kScreenWidth)&#123;</span><br><span class="line">        self.center &#x3D; CGPointMake(kScreenWidth - WIDTH&#x2F;2, self.center.y);</span><br><span class="line">    &#125;else if (self.center.y &#x3D;&#x3D; 0)&#123;</span><br><span class="line">        self.center &#x3D; CGPointMake(self.center.x, HEIGHT&#x2F;2);</span><br><span class="line">    &#125;else if (self.center.y &#x3D;&#x3D; kScreenHeight)&#123;</span><br><span class="line">        self.center &#x3D; CGPointMake(self.center.x, kScreenHeight - HEIGHT&#x2F;2);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;展示按钮列表</span><br><span class="line">    if (!self.isShowTab) &#123;</span><br><span class="line">        self.isShowTab &#x3D; YES;</span><br><span class="line">        &#x2F;&#x2F;为了主按钮点击动画</span><br><span class="line">        self.layer.masksToBounds &#x3D; YES;</span><br><span class="line"></span><br><span class="line">        [UIView animateWithDuration:showDuration animations:^&#123;</span><br><span class="line">            _contentView.alpha &#x3D; 1;</span><br><span class="line">            if (self.frame.origin.x &lt;&#x3D; kScreenWidth&#x2F;2) &#123;</span><br><span class="line">                [self resetContentview];</span><br><span class="line">                self.frame &#x3D; CGRectMake(self.frame.origin.x, self.frame.origin.y, WIDTH + _imagesAndTitle.count * (self.frameWidth + marginWith), self.frameWidth);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                [self moveContentviewLeft];</span><br><span class="line">                self.mainImageButton.frame &#x3D; CGRectMake((_imagesAndTitle.count * (self.frameWidth + marginWith)), 0, self.frameWidth, self.frameWidth);</span><br><span class="line">                self.frame &#x3D; CGRectMake(self.frame.origin.x - _imagesAndTitle.count * (self.frameWidth + marginWith), self.frame.origin.y, (WIDTH + _imagesAndTitle.count * (self.frameWidth + marginWith)), self.frameWidth);</span><br><span class="line">            &#125;</span><br><span class="line">            if (_bgColor) &#123;</span><br><span class="line">                self.backgroundColor &#x3D; _bgColor;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                self.backgroundColor &#x3D; [UIColor grayColor];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;移除pan手势</span><br><span class="line">        if (_panGesture) &#123;</span><br><span class="line">            [self removeGestureRecognizer:_panGesture];</span><br><span class="line">        &#125;</span><br><span class="line">        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(changeStatus) object:nil];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.isShowTab &#x3D; NO;</span><br><span class="line">        &#x2F;&#x2F;为主按钮点击动画</span><br><span class="line">        self.layer.masksToBounds &#x3D; NO;</span><br><span class="line">        &#x2F;&#x2F;添加pan手势</span><br><span class="line">        if (_panGesture) &#123;</span><br><span class="line">            [self addGestureRecognizer:_panGesture];</span><br><span class="line">        &#125;</span><br><span class="line">        [UIView animateWithDuration:showDuration animations:^&#123;</span><br><span class="line">            _contentView.alpha &#x3D; 0;</span><br><span class="line">            if (self.frame.origin.x + self.mainImageButton.frame.origin.x &lt;&#x3D; kScreenWidth&#x2F;2) &#123;</span><br><span class="line">                self.frame &#x3D; CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frameWidth, self.frameWidth);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                self.mainImageButton.frame &#x3D; CGRectMake(0, 0, self.frameWidth, self.frameWidth);</span><br><span class="line">                self.frame &#x3D; CGRectMake(self.frame.origin.x + _imagesAndTitle.count * (self.frameWidth + marginWith), self.frame.origin.y, self.frameWidth, self.frameWidth);</span><br><span class="line">            &#125;</span><br><span class="line">            self.backgroundColor &#x3D; [UIColor clearColor];</span><br><span class="line">        &#125;];</span><br><span class="line">        [self performSelector:@selector(changeStatus) withObject:nil afterDelay:statusChangeDuration];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)changeStatus&#123;</span><br><span class="line">    [UIView animateWithDuration:1.0 animations:^&#123;</span><br><span class="line">        _mainImageButton.alpha &#x3D; sleepAlpha;</span><br><span class="line">    &#125;];</span><br><span class="line">    [UIView animateWithDuration:0.5 animations:^&#123;</span><br><span class="line">        CGFloat x &#x3D; self.center.x &lt; 20+WIDTH&#x2F;2 ? 0 :  self.center.x &gt; kScreenWidth - 20 -WIDTH&#x2F;2 ? kScreenWidth : self.center.x;</span><br><span class="line">        CGFloat y &#x3D; self.center.y &lt; 40 + HEIGHT&#x2F;2 ? 0 : self.center.y &gt; kScreenHeight - 40 - HEIGHT&#x2F;2 ? kScreenHeight : self.center.y;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;禁止停留在4个角</span><br><span class="line">        if((x &#x3D;&#x3D; 0 &amp;&amp; y &#x3D;&#x3D;0) || (x &#x3D;&#x3D; kScreenWidth &amp;&amp; y &#x3D;&#x3D; 0) || (x &#x3D;&#x3D; 0 &amp;&amp; y &#x3D;&#x3D; kScreenHeight) || (x &#x3D;&#x3D; kScreenWidth &amp;&amp; y &#x3D;&#x3D; kScreenHeight))&#123;</span><br><span class="line">            y &#x3D; self.center.y;</span><br><span class="line">        &#125;</span><br><span class="line">        self.center &#x3D; CGPointMake(x, y);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)doBorderWidth:(CGFloat)width color:(UIColor *)color cornerRadius:(CGFloat)cornerRadius&#123;</span><br><span class="line">    self.layer.cornerRadius &#x3D; cornerRadius;</span><br><span class="line">    self.layer.borderWidth &#x3D; width;</span><br><span class="line">    if (!color) &#123;</span><br><span class="line">        self.layer.borderColor &#x3D; [UIColor whiteColor].CGColor;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.layer.borderColor &#x3D; color.CGColor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark  ------- button事件 ---------</span><br><span class="line">- (void)itemsDidClicked:(id)sender&#123;</span><br><span class="line">    if (self.isShowTab)&#123;</span><br><span class="line">        [self mainButtonDidClicked:nil];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    UIButton *button &#x3D; (UIButton *)sender;</span><br><span class="line">    if (self.clickBlock) &#123;</span><br><span class="line">        self.clickBlock(button.tag);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark  ------- 设备旋转 -----------</span><br><span class="line">- (void)orientChange:(NSNotification *)notification&#123;</span><br><span class="line">    &#x2F;&#x2F;不设置的话,长按动画那块有问题</span><br><span class="line">    self.layer.masksToBounds &#x3D; YES;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;旋转前要先改变frame，否则坐标有问题（临时办法）</span><br><span class="line">    self.frame &#x3D; CGRectMake(0, kScreenHeight - self.frame.origin.y - self.frame.size.height, self.frame.size.width,self.frame.size.height);</span><br><span class="line"></span><br><span class="line">    if (self.isShowTab) &#123;</span><br><span class="line">        [self mainButtonDidClicked:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/20/iOSTouchID/" title="iOS TouchID and FaceID">iOS TouchID and FaceID</a></h2>
+                <p class="excerpt">
+                
+                12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;#x2F;***  .h
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-20T09:31:00.000Z" class="post-list__meta--date date">2019-02-20</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/20/iOSTouchID/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/18/iOS瀑布流布局实现详解/" title="iOS 瀑布流布局实现详解">iOS 瀑布流布局实现详解</a></h2>
+                <p class="excerpt">
+                
+                新建文件继承自UICollectionViewLayout.h内容如下：1234567891011121314151617181920@class WaterFlowLayout;@protocol WaterFlowLayoutDelegate &amp;lt;NSObject&amp;gt;&amp;#x2F;&amp;#x2
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-18T10:16:00.000Z" class="post-list__meta--date date">2019-02-18</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/02/18/iOS瀑布流布局实现详解/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

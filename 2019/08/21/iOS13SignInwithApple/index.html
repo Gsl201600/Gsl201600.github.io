@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS 13-Sign In with Apple | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS 13-Sign In with Apple | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS 13-Sign In with Apple | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/08/21/iOS13SignInwithApple/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-08-21T08:44:00.000Z" class="post-list__meta--date date">2019-08-21</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS 13-Sign In with Apple</h1>
+  </header>
+
+  <section class="post">
+    <p>最近了解了<code>iOS 13</code>新增功能之<code>Sign In with Apple</code>，<code>Sign In with Apple</code>是跨平台的，可以支持<code>iOS、macOS、watchOS、tvOS、JS</code>。本文主要内容为<code>Sign In with Apple</code>在<code>iOS</code>上的基础使用。<a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2019/706/">详情参考WWDC 2019</a></p>
+<ul>
+<li>审核备注<blockquote>
+<p>New Guidelines for Sign in with Apple<br>We’ve updated the App Store Review Guidelines to provide criteria for when apps are required to use Sign in with Apple. Starting today, new apps submitted to the App Store must follow these guidelines. Existing apps and app updates must follow them by April 2020. We’ve also provided new guidelines for using Sign in with Apple on the web and other platforms.<br>September 12, 2019<br>也就是说，所有已接入其它第三方登录的 App，Sign In with Apple 将被要求作为一种登录选择，否则就不给过。从今天开始(2019-9-12)，提交到App Store的新应用必须遵循这些准则，现有应用程序和应用程序更新必须在2020年4月之前进行。<a target="_blank" rel="noopener" href="https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple">详情参考App Store审核指南</a></p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.01.png" alt=""></p>
+<ul>
+<li><p>开发<code>Sign In with Apple</code>的注意事项<br>需要在苹果后台打开该选项，并且重新生成<code>Profiles</code>配置文件，并安装到<code>Xcode</code>，如下图<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.02.png" alt=""></p>
+</li>
+<li><p>服务端验证需要的文件，一个是私钥文件，一个是<code>config.json</code>文件</p>
+</li>
+<li>创建用于客户端身份验证的私钥<br>返回<code>Certificates, Identifiers &amp; Profiles</code>主屏幕，从侧面导航中选择<code>Keys</code><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.03.png" alt=""></li>
+</ul>
+<p>单击<code>Configure</code>按钮，然后选择你先前创建的<code>Primary App ID</code>，保存之后，<code>Apple</code>将为你生成一个新的私钥，并让你仅下载一次，<code>请确保你保存了此文件，因为以后你将无法再次将其取回！</code>你下载的文件将以<code>.p8</code>结尾，可以将其重命名为<code>key.txt</code>以便在后续步骤中更轻松地使用</p>
+<ul>
+<li><p>创建<code>config.json</code>新文件，格式、内容和参数说明如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;client_id&quot;: &quot;实际上被称为“Service ID”，您将在“Identifiers”部分创建它，其实就是应用的bundleID&quot;,</span><br><span class="line">    &quot;team_id&quot;: &quot;后台账号的teamID&quot;,</span><br><span class="line">    &quot;redirect_uri&quot;: &quot;重定向url，网页登录需要，只是客服端登录可以不写&quot;,</span><br><span class="line">    &quot;key_id&quot;: &quot;在苹果后台获取，如下图&quot;,</span><br><span class="line">    &quot;scope&quot;: &quot;设置我们要从用户那里收集什么信息，我们可以设置email和name，或者也可以不写</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.04.png" alt="获取key_id"></p>
+</li>
+<li><p><code>web</code>使用<code>Sign In with Apple</code>的相关配置，<code>不需要web登录的，以下配置可以忽略</code></p>
+</li>
+<li>创建<code>Services ID</code><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.05.png" alt=""></li>
+</ul>
+<p>在下一步中，你将定义用户在登录流程中将看到的应用程序的名称，并定义成为<code>OAuth</code>的标识符<code>client_id</code>，确保还选中<code>Sign In with Apple</code>复选框<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.06.png" alt=""></p>
+<ul>
+<li>创建<code>web Authentication Configuration</code>，定义应用程序的重定向<code>URL</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.07.png" alt=""><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.08.png" alt=""></p>
+<ul>
+<li><p><code>iOS</code>使用<code>Sign In with Apple</code>在<code>Xcode</code>的准备工作<br>在<code>Xcode11 Signing &amp; Capabilities</code>中添加<code>Sign In With Apple</code>，如下图<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.21.09.jpeg" alt=""></p>
+</li>
+<li><p><code>iOS Sign In with Apple</code>流程</p>
+<blockquote>
+<ol>
+<li>导入系统头文件#import &lt;AuthenticationServices/AuthenticationServices.h&gt;，添加Sign In with Apple登录按钮，设置ASAuthorizationAppleIDButton相关布局，并添加按钮点击响应事件</li>
+<li>获取授权码</li>
+<li>验证</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>导入系统头文件<code>#import &lt;AuthenticationServices/AuthenticationServices.h&gt;</code>，添加<code>Sign In with Apple</code>登录按钮，设置<code>ASAuthorizationAppleIDButton</code>相关布局，并添加按钮点击响应事件。当然苹果也允许自定义苹果登录按钮的样式，样式要求详见这个文档：<a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/">Human Interface Guidelines</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">- (void)configUI&#123;</span><br><span class="line">    &#x2F;&#x2F; 使用系统提供的按钮，要注意不支持系统版本的处理</span><br><span class="line">    if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">        &#x2F;&#x2F; Sign In With Apple Button</span><br><span class="line">        ASAuthorizationAppleIDButton *appleIDBtn &#x3D; [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeDefault style:ASAuthorizationAppleIDButtonStyleWhite];</span><br><span class="line">        appleIDBtn.frame &#x3D; CGRectMake(30, self.view.bounds.size.height - 180, self.view.bounds.size.width - 60, 100);</span><br><span class="line">        &#x2F;&#x2F;    appleBtn.cornerRadius &#x3D; 22.f;</span><br><span class="line">        [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">        [self.view addSubview:appleIDBtn];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 或者自己用UIButton实现按钮样式</span><br><span class="line">    UIButton *addBtn &#x3D; [UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">    addBtn.frame &#x3D; CGRectMake(30, 80, self.view.bounds.size.width - 60, 44);</span><br><span class="line">    addBtn.backgroundColor &#x3D; [UIColor orangeColor];</span><br><span class="line">    [addBtn setTitle:@&quot;Sign in with Apple&quot; forState:UIControlStateNormal];</span><br><span class="line">    [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    [self.view addSubview:addBtn];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 自己用UIButton按钮调用处理授权的方法</span><br><span class="line">- (void)didCustomBtnClicked&#123;</span><br><span class="line">    &#x2F;&#x2F; 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行</span><br><span class="line">    self.signInApple &#x3D; [[SignInApple alloc] init];</span><br><span class="line">    [self.signInApple handleAuthorizationAppleIDButtonPress];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用系统提供的按钮调用处理授权的方法</span><br><span class="line">- (void)didAppleIDBtnClicked&#123;</span><br><span class="line">    &#x2F;&#x2F; 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行</span><br><span class="line">    self.signInApple &#x3D; [[SignInApple alloc] init];</span><br><span class="line">    [self.signInApple handleAuthorizationAppleIDButtonPress];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 处理授权</span><br><span class="line">- (void)handleAuthorizationAppleIDButtonPress&#123;</span><br><span class="line">    NSLog(@&quot;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&quot;);</span><br><span class="line">    </span><br><span class="line">    if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">        &#x2F;&#x2F; 基于用户的Apple ID授权用户，生成用户授权请求的一种机制</span><br><span class="line">        ASAuthorizationAppleIDProvider *appleIDProvider &#x3D; [[ASAuthorizationAppleIDProvider alloc] init];</span><br><span class="line">        &#x2F;&#x2F; 创建新的AppleID 授权请求</span><br><span class="line">        ASAuthorizationAppleIDRequest *appleIDRequest &#x3D; [appleIDProvider createRequest];</span><br><span class="line">        &#x2F;&#x2F; 在用户授权期间请求的联系信息</span><br><span class="line">        appleIDRequest.requestedScopes &#x3D; @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];</span><br><span class="line">        &#x2F;&#x2F; 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器</span><br><span class="line">        ASAuthorizationController *authorizationController &#x3D; [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[appleIDRequest]];</span><br><span class="line">        &#x2F;&#x2F; 设置授权控制器通知授权请求的成功与失败的代理</span><br><span class="line">        authorizationController.delegate &#x3D; self;</span><br><span class="line">        &#x2F;&#x2F; 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户</span><br><span class="line">        authorizationController.presentationContextProvider &#x3D; self;</span><br><span class="line">        &#x2F;&#x2F; 在控制器初始化期间启动授权流</span><br><span class="line">        [authorizationController performRequests];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        &#x2F;&#x2F; 处理不支持系统版本</span><br><span class="line">        NSLog(@&quot;该系统版本不可用Apple登录&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><strong>注意：封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行</strong></li>
+<li>已经使用<code>Sign In with Apple</code>登录过<code>app</code>的用户<br>如果设备中存在<code>iCloud Keychain</code>凭证或者<code>AppleID</code>凭证，提示用户直接使用<code>TouchID</code>或<code>FaceID</code>登录即可，代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如果存在iCloud Keychain 凭证或者AppleID 凭证提示用户</span><br><span class="line">- (void)perfomExistingAccountSetupFlows&#123;</span><br><span class="line">    NSLog(@&quot;&#x2F;&#x2F;&#x2F;已经认证过了&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&quot;);</span><br><span class="line">    </span><br><span class="line">    if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">        &#x2F;&#x2F; 基于用户的Apple ID授权用户，生成用户授权请求的一种机制</span><br><span class="line">        ASAuthorizationAppleIDProvider *appleIDProvider &#x3D; [[ASAuthorizationAppleIDProvider alloc] init];</span><br><span class="line">        &#x2F;&#x2F; 授权请求AppleID</span><br><span class="line">        ASAuthorizationAppleIDRequest *appleIDRequest &#x3D; [appleIDProvider createRequest];</span><br><span class="line">        &#x2F;&#x2F; 为了执行钥匙串凭证分享生成请求的一种机制</span><br><span class="line">        ASAuthorizationPasswordProvider *passwordProvider &#x3D; [[ASAuthorizationPasswordProvider alloc] init];</span><br><span class="line">        ASAuthorizationPasswordRequest *passwordRequest &#x3D; [passwordProvider createRequest];</span><br><span class="line">        &#x2F;&#x2F; 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器</span><br><span class="line">        ASAuthorizationController *authorizationController &#x3D; [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[appleIDRequest, passwordRequest]];</span><br><span class="line">        &#x2F;&#x2F; 设置授权控制器通知授权请求的成功与失败的代理</span><br><span class="line">        authorizationController.delegate &#x3D; self;</span><br><span class="line">        &#x2F;&#x2F; 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户</span><br><span class="line">        authorizationController.presentationContextProvider &#x3D; self;</span><br><span class="line">        &#x2F;&#x2F; 在控制器初始化期间启动授权流</span><br><span class="line">        [authorizationController performRequests];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        &#x2F;&#x2F; 处理不支持系统版本</span><br><span class="line">        NSLog(@&quot;该系统版本不可用Apple登录&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>获取授权码<br>获取授权码需要在代码中实现两个代理回调<code>ASAuthorizationControllerDelegate、ASAuthorizationControllerPresentationContextProviding</code>分别用于处理授权登录成功和失败、以及提供用于展示授权页面的<code>Window</code>，代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - delegate</span><br><span class="line">&#x2F;&#x2F;@optional 授权成功地回调</span><br><span class="line">- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0))&#123;</span><br><span class="line">    NSLog(@&quot;授权完成:::%@&quot;, authorization.credential);</span><br><span class="line">    NSLog(@&quot;%s&quot;, __FUNCTION__);</span><br><span class="line">    NSLog(@&quot;%@&quot;, controller);</span><br><span class="line">    NSLog(@&quot;%@&quot;, authorization);</span><br><span class="line">    </span><br><span class="line">    if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) &#123;</span><br><span class="line">        &#x2F;&#x2F; 用户登录使用ASAuthorizationAppleIDCredential</span><br><span class="line">        ASAuthorizationAppleIDCredential *appleIDCredential &#x3D; authorization.credential;</span><br><span class="line">        NSString *user &#x3D; appleIDCredential.user;</span><br><span class="line">        &#x2F;&#x2F; 使用过授权的，可能获取不到以下三个参数</span><br><span class="line">        NSString *familyName &#x3D; appleIDCredential.fullName.familyName;</span><br><span class="line">        NSString *givenName &#x3D; appleIDCredential.fullName.givenName;</span><br><span class="line">        NSString *email &#x3D; appleIDCredential.email;</span><br><span class="line">        </span><br><span class="line">        NSData *identityToken &#x3D; appleIDCredential.identityToken;</span><br><span class="line">        NSData *authorizationCode &#x3D; appleIDCredential.authorizationCode;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F; 服务器验证需要使用的参数</span><br><span class="line">        NSString *identityTokenStr &#x3D; [[NSString alloc] initWithData:identityToken encoding:NSUTF8StringEncoding];</span><br><span class="line">        NSString *authorizationCodeStr &#x3D; [[NSString alloc] initWithData:authorizationCode encoding:NSUTF8StringEncoding];</span><br><span class="line">        NSLog(@&quot;%@\n\n%@&quot;, identityTokenStr, authorizationCodeStr);</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F; Create an account in your system.</span><br><span class="line">        &#x2F;&#x2F; For the purpose of this demo app, store the userIdentifier in the keychain.</span><br><span class="line">        &#x2F;&#x2F;  需要使用钥匙串的方式保存用户的唯一信息</span><br><span class="line">&#x2F;&#x2F;        [YostarKeychain save:KEYCHAIN_IDENTIFIER(@&quot;userIdentifier&quot;) data:user];</span><br><span class="line">        </span><br><span class="line">    &#125;else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]])&#123;</span><br><span class="line">        &#x2F;&#x2F; 这个获取的是iCloud记录的账号密码，需要输入框支持iOS 12 记录账号密码的新特性，如果不支持，可以忽略</span><br><span class="line">        &#x2F;&#x2F; Sign in using an existing iCloud Keychain credential.</span><br><span class="line">        &#x2F;&#x2F; 用户登录使用现有的密码凭证</span><br><span class="line">        ASPasswordCredential *passwordCredential &#x3D; authorization.credential;</span><br><span class="line">        &#x2F;&#x2F; 密码凭证对象的用户标识 用户的唯一标识</span><br><span class="line">        NSString *user &#x3D; passwordCredential.user;</span><br><span class="line">        &#x2F;&#x2F; 密码凭证对象的密码</span><br><span class="line">        NSString *password &#x3D; passwordCredential.password;</span><br><span class="line">        </span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        NSLog(@&quot;授权信息均不符&quot;);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 授权失败的回调</span><br><span class="line">- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0))&#123;</span><br><span class="line">    &#x2F;&#x2F; Handle error.</span><br><span class="line">    NSLog(@&quot;Handle error：%@&quot;, error);</span><br><span class="line">    NSString *errorMsg &#x3D; nil;</span><br><span class="line">    switch (error.code) &#123;</span><br><span class="line">        case ASAuthorizationErrorCanceled:</span><br><span class="line">            errorMsg &#x3D; @&quot;用户取消了授权请求&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorFailed:</span><br><span class="line">            errorMsg &#x3D; @&quot;授权请求失败&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorInvalidResponse:</span><br><span class="line">            errorMsg &#x3D; @&quot;授权请求响应无效&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorNotHandled:</span><br><span class="line">            errorMsg &#x3D; @&quot;未能处理授权请求&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorUnknown:</span><br><span class="line">            errorMsg &#x3D; @&quot;授权请求失败未知原因&quot;;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        default:</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;%@&quot;, errorMsg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 告诉代理应该在哪个window 展示内容给用户</span><br><span class="line">- (ASPresentationAnchor)presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller API_AVAILABLE(ios(13.0))&#123;</span><br><span class="line">    NSLog(@&quot;88888888888&quot;);</span><br><span class="line">    &#x2F;&#x2F; 返回window</span><br><span class="line">    return [UIApplication sharedApplication].windows.lastObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在授权登录成功回调中，我们可以拿到以下几类数据</li>
+</ol>
+<ul>
+<li><strong>UserID:</strong><code>Unique, stable, team-scoped user ID</code>，苹果用户唯一标识符，该值在同一个开发者账号下的所有<code>App</code>下是一样的，开发者可以用该唯一标识符与自己后台系统的账号体系绑定起来（这与国内的<code>微信、QQ、微博</code>等第三方登录流程基本一致）</li>
+<li><strong>Verification data:</strong><code>Identity token, code</code>，验证数据，用于传给开发者后台服务器，然后开发者服务器再向苹果的身份验证服务端验证，本次授权登录请求数据的有效性和真实性，详见<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/signinwithapplerestapi">Sign In with Apple REST API</a></li>
+<li><strong>Account information:</strong><code>Name, verified email</code>，苹果用户信息，包括全名、邮箱等，注意：<strong>如果玩家登录时拒绝提供真实的邮箱账号，苹果会生成虚拟的邮箱账号，而且记录过的苹果账号再次登录这些参数拿不到</strong></li>
+</ul>
+<ol start="3">
+<li>验证<br>关于验证的这一步，需要传递授权码给自己的服务端，自己的服务端调用苹果<code>API</code>去校验授权码<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/signinwithapplerestapi/generate_and_validate_tokens">Generate and validate tokens</a>。如果验证成功，可以根据<code>userIdentifier</code>判断账号是否已存在，若存在，则返回自己账号系统的登录态，若不存在，则创建一个新的账号，并返回对应的登录状态给<code>App</code></li>
+</ol>
+<ul>
+<li>推荐验证步骤为：</li>
+<li>服务端拿<code>authorizationCode</code>去苹果后台验证，验证地址<code>https://appleid.apple.com/auth/token</code>，苹果返回<code>id_token</code>，与客户端获取的<code>identityToken</code>值一样，格式如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;access_token&quot;: &quot;一个token&quot;,</span><br><span class="line">    &quot;token_type&quot;: &quot;Bearer&quot;,</span><br><span class="line">    &quot;expires_in&quot;: 3600,</span><br><span class="line">    &quot;refresh_token&quot;: &quot;一个token&quot;,</span><br><span class="line">    &quot;id_token&quot;: &quot;结果是JWT，字符串形式，identityToken&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+另外授权<code>code</code>是有时效性的，且使用一次即失效</li>
+<li>服务器拿到相应结果后，其中<code>id_token</code>是<code>JWT</code>数据，解码<code>id_token</code>，得到如下内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;iss&quot;:&quot;https:&#x2F;&#x2F;appleid.apple.com&quot;,</span><br><span class="line">    &quot;aud&quot;:&quot;这个是你的app的bundle identifier&quot;,</span><br><span class="line">    &quot;exp&quot;:1567482337,</span><br><span class="line">    &quot;iat&quot;:1567481737,</span><br><span class="line">    &quot;sub&quot;:&quot;这个字段和客户端获取的user字段是完全一样的&quot;,</span><br><span class="line">    &quot;c_hash&quot;:&quot;8KDzfalU5kygg5zxXiX7dA&quot;,</span><br><span class="line">    &quot;auth_time&quot;:1567481737</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+其中<code>aud</code>与你<code>app</code>的<code>bundleID</code>一致，<code>sub</code>就是授权用户的唯一标识，与手机端获得的<code>user</code>一致，服务器端通过对比<code>sub</code>字段信息是否与手机端上传的<code>user</code>信息一致来确定是否成功登录<br>该<code>token</code>的有效期是<code>10</code>分钟，具体后端验证参考附录</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/authenticationservices/adding_the_sign_in_with_apple_flow_to_your_app">附：官方示例代码 Swift 版</a><br><a target="_blank" rel="noopener" href="https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple">附：What the Heck is Sign In with Apple?</a><br><a target="_blank" rel="noopener" href="https://www.yuque.com/zhanglong/bb0s5d/cxbh7n">附：Sign In with Apple 从登陆到服务器验证</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wpf199402076118/article/details/99677412">附：苹果授权登陆后端验证</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/signinwithapplerestapi/generate_and_validate_tokens">附：[官方文档] Generate and validate tokens</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple">附：[官方文档]  App Store审核指南</a><br><a target="_blank" rel="noopener" href="https://github.com/Gsl201600/SignInAppleDemo.git">附：SignInAppleDemo</a></p>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/08/28/Chrome浏览器扩展插件/" title="Chrome 浏览器扩展插件">Chrome 浏览器扩展插件</a></h2>
+                <p class="excerpt">
+                
+                Chrome扩展可以在Google应用商店下载这里可以搜索安装你喜欢的各种扩展扩展这么多，推荐以下扩展
+
+油猴Tampermonkey
+暴力猴
+AdGuard广告拦截器
+广告终结者
+JSON-handle
+Postwoman Browser Extension
+PostWoman Http接口调试插
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-08-28T07:39:00.000Z" class="post-list__meta--date date">2019-08-28</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
+</span><a class="btn-border-small" href="/2019/08/28/Chrome浏览器扩展插件/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/08/14/mac搭建基于Hexo-Github的Blog/" title="mac 搭建基于Hexo-Github的Blog">mac 搭建基于Hexo-Github的Blog</a></h2>
+                <p class="excerpt">
+                
+                
+GitHubPages + Hexo：免费，使用简单，使用者众多
+
+博客搭建
+
+创建 GitHub 仓库
+
+
+注意 Respository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可
+
+
+安装博客需要
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-08-14T07:56:00.000Z" class="post-list__meta--date date">2019-08-14</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/08/14/mac搭建基于Hexo-Github的Blog/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

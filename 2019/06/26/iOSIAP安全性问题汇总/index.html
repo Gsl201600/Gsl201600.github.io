@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS IAP安全性问题汇总 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS IAP安全性问题汇总 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS IAP安全性问题汇总 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/06/26/iOSIAP%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-06-26T06:11:00.000Z" class="post-list__meta--date date">2019-06-26</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS IAP安全性问题汇总</h1>
+  </header>
+
+  <section class="post">
+    <p><strong>1. 常用的攻击方式</strong></p>
+<ul>
+<li>劫持apple server攻击</li>
+<li>重复验证攻击</li>
+<li>跨app攻击</li>
+<li>换价格攻击</li>
+<li>歧义攻击</li>
+<li>中间人攻击</li>
+</ul>
+<p><strong>2. 讲解攻击方式及处理</strong></p>
+<ul>
+<li>劫持apple server攻击</li>
+</ul>
+<blockquote>
+<p>通过dns污染,让客户端通过假的apple_server进行verify,从而认为自己支付成功。这个主要针对客户端验证发货的方式,如果是服务端验证,就没效果了</p>
+</blockquote>
+<ul>
+<li>重复验证攻击</li>
+</ul>
+<blockquote>
+<p>因为同一个receipt,如果第一次验证成功,那么之后每次验证都会成功。如果服务端没有判重机制,就会导致一个receipt被当做多次充值处理。</p>
+</blockquote>
+<blockquote>
+<p>为了预防这种情况,我们可以将receipt做一次md5得到receipt_md5, 每次发送充值请求的时候就按照receipt_md5判重,如果重复就停止商品发放；或者根据解析得到的信息进行判重</p>
+</blockquote>
+<ul>
+<li>跨app攻击</li>
+</ul>
+<blockquote>
+<p>通过在别的app中拿到receipt,然后发送到我们app中。因为这个receipt是合法的而且apple不会验证请求的源,所以这个receipt是可以验证通过的</p>
+</blockquote>
+<blockquote>
+<p>对于这种情况,我们可以判断apple verify的返回值apple_callback_data中对应的bundle_id和我们app的bundle_id是否一样来进行验证</p>
+</blockquote>
+<ul>
+<li>换价格攻击</li>
+</ul>
+<blockquote>
+<p>在同一个app中,用低价商品的receipt伪造购买高价商品。这时候bundle_id和我们app的bundle_id是一致的</p>
+</blockquote>
+<blockquote>
+<p>针对这种情况, 我们可以从apple verify的返回值apple_callback_data中拿到对应的product_id, 并按照product_id来进行充值。不要信任客户端的product_id</p>
+</blockquote>
+<ul>
+<li>歧义攻击</li>
+</ul>
+<blockquote>
+<p>在iOS6的时候,status=0表示此次支付成功,而现在变为status=0只表示receipt整体上合法。对iOS7即使是一个过期订单,也会返回status=0,如果还按照iOS6的逻辑处理,就会导致假充值</p>
+</blockquote>
+<blockquote>
+<p>针对iOS7,我们应该不只通过status,还要通过in_app中的内容,来决定如何发放商品</p>
+</blockquote>
+<blockquote>
+<p>For iOS 6 style transaction receipts, the status code reflects the status of the specific transaction’s receipt.<br>For iOS 7 style app receipts, the status code is reflects the status of the app receipt as a whole. For example, if you send a valid app receipt that contains an expired subscription, the response is 0 because the receipt as a whole is valid.</p>
+</blockquote>
+<ul>
+<li>中间人攻击</li>
+</ul>
+<blockquote>
+<p>伪造apple server,将我们的支付请求转发到真的apple_server,拿到合法的receipt,并弄个假的receipt给客户端。这样就拿到一个合法的凭证。利用这个合法的receipt,伪造别人充值的请求,从而达到帮别人充值的目的</p>
+</blockquote>
+<blockquote>
+<p>针对中间人攻击,最重要的是保证a用户的支付receipt,不能被b用户使用。但是apple为了保护隐私,receipt中没有任何用户的个人信息,这就需要我们自己来保证。目前我们可以用加密的手段来做这个保证</p>
+</blockquote>
+<ul>
+<li>最后给出一个apple_callback_data的例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;status&quot;: 0,</span><br><span class="line">    &quot;environment&quot;: &quot;Production&quot;,</span><br><span class="line">    &quot;receipt&quot;: &#123;</span><br><span class="line">        &quot;download_id&quot;: 75017873837267,</span><br><span class="line">        &quot;adam_id&quot;: 1149703708,</span><br><span class="line">        &quot;request_date&quot;: &quot;2017-01-13 06:57:20 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;app_item_id&quot;: 1149703708,</span><br><span class="line">        &quot;original_purchase_date_pst&quot;: &quot;2016-11-17 18:57:09 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;version_external_identifier&quot;: 820252187,</span><br><span class="line">        &quot;receipt_creation_date&quot;: &quot;2017-01-13 05:04:52 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;in_app&quot;: [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;is_trial_period&quot;: &quot;false&quot;,</span><br><span class="line">                &quot;purchase_date_pst&quot;: &quot;2017-01-12 21:04:52 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">                &quot;original_purchase_date_pst&quot;: &quot;2017-01-12 21:04:52 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">                &quot;product_id&quot;: &quot;com.lucky917.live.gold.1.555&quot;,</span><br><span class="line">                &quot;original_transaction_id&quot;: &quot;350000191094279&quot;,</span><br><span class="line">                &quot;original_purchase_date&quot;: &quot;2017-01-13 05:04:52 Etc&#x2F;GMT&quot;,</span><br><span class="line">                &quot;original_purchase_date_ms&quot;: &quot;1484283892000&quot;,</span><br><span class="line">                &quot;purchase_date&quot;: &quot;2017-01-13 05:04:52 Etc&#x2F;GMT&quot;,</span><br><span class="line">                &quot;purchase_date_ms&quot;: &quot;1484283892000&quot;,</span><br><span class="line">                &quot;transaction_id&quot;: &quot;350000191094279&quot;,</span><br><span class="line">                &quot;quantity&quot;: &quot;1&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        &quot;original_purchase_date_ms&quot;: &quot;1479437829000&quot;,</span><br><span class="line">        &quot;original_application_version&quot;: &quot;26&quot;,</span><br><span class="line">        &quot;original_purchase_date&quot;: &quot;2016-11-18 02:57:09 Etc&#x2F;GMT&quot;,</span><br><span class="line">        &quot;request_date_ms&quot;: &quot;1484290640800&quot;,</span><br><span class="line">        &quot;bundle_id&quot;: &quot;com.lucky917.ios.Live&quot;,</span><br><span class="line">        &quot;receipt_creation_date_pst&quot;: &quot;2017-01-12 21:04:52 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;application_version&quot;: &quot;32&quot;,</span><br><span class="line">        &quot;request_date_pst&quot;: &quot;2017-01-12 22:57:20 America&#x2F;Los_Angeles&quot;,</span><br><span class="line">        &quot;receipt_creation_date_ms&quot;: &quot;1484283892000&quot;,</span><br><span class="line">        &quot;receipt_type&quot;: &quot;Production&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/07/03/iOS简单日志系统/" title="iOS 简单日志系统">iOS 简单日志系统</a></h2>
+                <p class="excerpt">
+                
+                12345678910111213141516171819202122232425#define YostarDebugLogLevel(level, fmt, ...) \[YostarDebugLog logLevel:level file:__FILE__ function:__PRETTY_
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-07-03T09:00:00.000Z" class="post-list__meta--date date">2019-07-03</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/07/03/iOS简单日志系统/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/06/19/iOSIAP支付常见问题汇总与解决/" title="iOS IAP支付常见问题汇总与解决">iOS IAP支付常见问题汇总与解决</a></h2>
+                <p class="excerpt">
+                
+                1. 获取不到商品信息的原因
+
+沙盒的测试账号和你请求商品信息没有关系
+iTunes Connect里面对应账号的协议、税务和银行业务信息有没有填完整，填好的应该是这个样子这个很容易疏忽，务必检查
+
+
+
+确认证书是否添加IAP支付功能默认创建的证书是包含该项的
+确定是真机测试且手机没有越狱大部分越狱
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-06-19T09:35:00.000Z" class="post-list__meta--date date">2019-06-19</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/06/19/iOSIAP支付常见问题汇总与解决/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>

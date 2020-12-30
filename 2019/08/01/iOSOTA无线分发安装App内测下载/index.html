@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>	
+	<meta name="baidu-site-verification" content="TdYX67503e" />
+	<meta name="google-site-verification" content="VWDMhM8Pza2_iUJRX_m6vnFd_WDkXIZp0XMy5H3yneo" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS OTA无线分发安装App内测下载 | Gsl&#39;s Library</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="嗨，我是一名 iOS 开发者">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS OTA无线分发安装App内测下载 | Gsl&#39;s Library">
+    <meta name="twitter:description" content="嗨，我是一名 iOS 开发者">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS OTA无线分发安装App内测下载 | Gsl&#39;s Library">
+    <meta property="og:description" content="嗨，我是一名 iOS 开发者">
+
+    
+    <meta name="author" content="Gsl">
+    
+    
+<link rel="stylesheet" href="/css/vno.css">
+
+    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+    
+    <link rel="icon" href="/images/avatar-small.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Gsl&#39;s Library" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://gsl201600.github.io/2019/08/01/iOSOTA%E6%97%A0%E7%BA%BF%E5%88%86%E5%8F%91%E5%AE%89%E8%A3%85App%E5%86%85%E6%B5%8B%E4%B8%8B%E8%BD%BD/"/>
+
+    
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: #1E92FB; /*进度条颜色*/
+          height: 3px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: #1E92FB;    /*上边框颜色*/
+          border-left-color: #1E92FB;    /*左边框颜色*/
+      }
+  </style> 
+
+</head>
+
+<body class="home-template no-js">
+    
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Gsl&#39;s Library 的主页"><img src="/images/avatar.png" width="80" alt="Gsl&#39;s Library logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Gsl&#39;s Library">Gsl&#39;s Library</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">如颖随行</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">嗨，我是一名 iOS 开发者</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">幻想间</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/p/1005053430067690/home" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Gsl201600" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  <li class="navigation__item">
+    <a href="https://www.facebook.com/guan.shuaile.334" title="上Facebook找我" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">Facebook</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/wrSIuYLrNzKhNoc" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-08-01T06:50:00.000Z" class="post-list__meta--date date">2019-08-01</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS OTA无线分发安装App内测下载</h1>
+  </header>
+
+  <section class="post">
+    <p><strong>搭建步骤</strong></p>
+<ol>
+<li>应用<code>.ipa</code>文件，可以是<code>企业级签名</code>，也可以是<code>dev签名包</code></li>
+<li><code>manifest.plist</code>文件，<code>plist</code>文件和<code>ipa</code>文件必须放在支持<code>https://</code>服务器上，而且必须是公网<code>ssl</code>，自签名及免费的<code>https</code>不可用（本文以<code>GitHub</code>为例）</li>
+<li>下载应用的<code>html</code>页面</li>
+</ol>
+<hr>
+<ul>
+<li><code>manifest.plist</code>内容如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE plist PUBLIC &quot;-&#x2F;&#x2F;Apple&#x2F;&#x2F;DTD PLIST 1.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.apple.com&#x2F;DTDs&#x2F;PropertyList-1.0.dtd&quot;&gt;</span><br><span class="line">&lt;plist version&#x3D;&quot;1.0&quot;&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;items&lt;&#x2F;key&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">        &lt;dict&gt;</span><br><span class="line">            &lt;key&gt;assets&lt;&#x2F;key&gt;</span><br><span class="line">            &lt;array&gt;</span><br><span class="line">                &lt;dict&gt;</span><br><span class="line">                    &lt;key&gt;kind&lt;&#x2F;key&gt;</span><br><span class="line">                    &lt;string&gt;software-package&lt;&#x2F;string&gt;</span><br><span class="line">                    &lt;key&gt;url&lt;&#x2F;key&gt;</span><br><span class="line">                    &lt;string&gt;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;***&#x2F;testIPA&#x2F;master&#x2F;Unity-iPhone.ipa&lt;&#x2F;string&gt;</span><br><span class="line">                &lt;&#x2F;dict&gt;</span><br><span class="line">            &lt;&#x2F;array&gt;</span><br><span class="line">            &lt;key&gt;metadata&lt;&#x2F;key&gt;</span><br><span class="line">            &lt;dict&gt;</span><br><span class="line">                &lt;key&gt;bundle-identifier&lt;&#x2F;key&gt;</span><br><span class="line">                &lt;string&gt;com.*****EN.****&lt;&#x2F;string&gt;</span><br><span class="line">                &lt;key&gt;bundle-version&lt;&#x2F;key&gt;</span><br><span class="line">                &lt;string&gt;0.1&lt;&#x2F;string&gt;</span><br><span class="line">                &lt;key&gt;kind&lt;&#x2F;key&gt;</span><br><span class="line">                &lt;string&gt;software&lt;&#x2F;string&gt;</span><br><span class="line">                &lt;key&gt;title&lt;&#x2F;key&gt;</span><br><span class="line">                &lt;string&gt;应用名称&lt;&#x2F;string&gt;</span><br><span class="line">            &lt;&#x2F;dict&gt;</span><br><span class="line">        &lt;&#x2F;dict&gt;</span><br><span class="line">    &lt;&#x2F;array&gt;</span><br><span class="line">&lt;&#x2F;dict&gt;</span><br><span class="line">&lt;&#x2F;plist&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>将应用的<code>.ipa</code>文件，<code>manifest.plist</code>文件以及<code>html</code>下载页面，上传到<code>GitHub</code>上（支持<code>https://</code>服务器上）<br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.01.01.png" alt=""></p>
+</li>
+<li><p><strong>注意：获取文件路径正确姿势</strong></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.01.02.png" alt="获取.ipa和图片下载路径，他们的获取方式一样"><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.01.03.png" alt="获取manifest.plist文件路径"><br><img src="https://raw.githubusercontent.com/Gsl201600/PicGoImg/master/img/2019.08.01.04.png" alt="点击Raw按钮后，会进入以下页面"></p>
+<ul>
+<li>修改<code>manifest.plist</code>文件，将获取的下载路径，填写到<code>manifest.plist</code>文件中对应位置</li>
+<li><code>html</code>简易下载页面，下载链接必须是这样的格式<code>itms-services://?action=download-manifest&amp;url=一个plist文件的地址</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;title&gt;Install&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p align&#x3D;center&gt;</span><br><span class="line">          &lt;font size&#x3D;&quot;10&quot;&gt;</span><br><span class="line">            &lt;a style&#x3D;&quot;color:#69DEDA&quot; href&#x3D;&quot;itms-services:&#x2F;&#x2F;?action&#x3D;download-manifest&amp;url&#x3D;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;***&#x2F;testIPA&#x2F;master&#x2F;DownloadPlist.plist&quot;&gt;点击安装&lt;&#x2F;a&gt;</span><br><span class="line">          &lt;&#x2F;font&gt;</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></li>
+<li><strong>附：如何直接在<code>github</code>上预览<code>html</code>网页效果</strong></li>
+</ul>
+<ol>
+<li>将<code>github</code>上<code>demo</code>的<code>html</code>文件链接复制到，打开下面网址后出现的输入栏中，点击按钮即可。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;htmlpreview.github.io&#x2F;</span><br></pre></td></tr></table></figure>
+<a target="_blank" rel="noopener" href="http://htmlpreview.github.io/">GitHub &amp; BitBucket HTML Preview</a></li>
+<li>在<code>HTML</code>文件的地址前面加上<code>htmlpreview.github.io/?</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htmlpreview.github.io&#x2F;?文件地址</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在<code>github</code>上<code>demo</code>的仓库页面，点击<code>setting</code>按钮，找到<code>GitHub Pages</code>版块，选择<code>Source</code>为<code>master branch</code>，然后保存（或者在<code>Theme Chooser</code>处，点击<code>Change theme</code>，进入页面后选择主题保存，这样也可以）页面会出现一个新链接，在链接后面加上<code>demo</code>的<code>HTML</code>文件名，即可跳转到<code>demo</code>显示的页面</li>
+</ol>
+<ul>
+<li><strong>附：Github如何上传超过100M的大文件</strong>(使用 <a target="_blank" rel="noopener" href="https://github.com/git-lfs/git-lfs">Git LFS</a>)<br>使用方式：先安装<code>Git LFS</code>的客户端，然后在将要<code>push</code>的仓库里重新打开一个<code>bash</code>命令行：</li>
+</ul>
+<ol>
+<li>只需设置1次<code>LFS</code>：<code>git lfs install</code></li>
+<li>然后跟踪一下你要<code>push</code>的大文件的文件或指定文件类型<code>git lfs track &quot;*.pdf&quot;</code>当然还可以直接编辑<code>.gitattributes</code>文件</li>
+<li>以上已经设置完毕，其余的工作就是按照正常的<code>add, commit, push</code>流程就可以了<br><strong>注：</strong><code>sourcetree</code>集成的有<code>LFS</code>使用也非常方便</li>
+</ol>
+<ul>
+<li><strong>附：使用的SourceTree提交到git远程仓库的时候时出现了问题，一直处于这种状态<code>POST Git-receive-pack (chunked)</code></strong></li>
+<li>解决办法<br>打开<code>SourceTree</code>右上角的，<code>设置 -&gt; 高级 -&gt; 编辑配置文件</code>，来打开配置文件，在配置文件中添加如下配置，最后保存，重新尝试推送到仓库就可以了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[http] </span><br><span class="line">      postBuffer &#x3D; 524288000</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+<div>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  </div>
+
+  <iframe src="https://gsl201600.github.io/RewardCode" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/08/07/iOSUIButton之改变有效点击区域/" title="iOS UIButton之改变有效点击区域">iOS UIButton之改变有效点击区域</a></h2>
+                <p class="excerpt">
+                
+                
+解决方案通过重写- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event;以改变按钮的有效点击区域12345678910111213141516171819- (BOOL)pointInside:(CGPoint)point wit
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-08-07T06:51:00.000Z" class="post-list__meta--date date">2019-08-07</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/08/07/iOSUIButton之改变有效点击区域/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/07/24/iOS使用自定义字体/" title="iOS 使用自定义字体">iOS 使用自定义字体</a></h2>
+                <p class="excerpt">
+                
+                1. 动态下载系统提供的中文字体
+
+为了实现更好的字体效果，在应用中加入字体包问题：
+
+字体文件比较大，会造成应用体积剧增
+中文字体通常都是有版权的
+
+
+
+动态下载中文字体的API可以动态的向iOS系统中添加字体文件，这些字体文件都是下载到系统的目录中，所以不会造成应用体积增加，字体文件下载后还可以
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-07-24T07:32:00.000Z" class="post-list__meta--date date">2019-07-24</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="-none-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/" rel="tag">代码库</a>
+</span><a class="btn-border-small" href="/2019/07/24/iOS使用自定义字体/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  <section class="livere" id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM1Ni8xNzkwMw==">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</section>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2020 Gsl - 本站点采用 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 本站由 <a href="https://gsl201600.github.io">@gsl</a> 创建，基于 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> 搭建，使用 <a target="_blank" rel="noopener" href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>  
+    
+    
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+ 	总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("12/25/2018 00:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":130,"height":260},"mobile":{"show":true},"log":false});</script></body>
+</html>
